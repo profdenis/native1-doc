@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="hi"
+                 name="Help Instance"
+                 start-page="Native1.md">
+
+    <toc-element topic="Native1.md"/>
+    <toc-element topic="Les-bases-du-langage-Go.md">
+        <toc-element topic="Le-premier-programme.md"/>
+        <toc-element topic="Les-variables-et-les-types-de-base.md"/>
+        <toc-element topic="Les-différentes-façons-d-écrire-des-valeurs.md"/>
+        <toc-element topic="Les-fonctions.md"/>
+        <toc-element topic="Les-conditionnelles.md"/>
+        <toc-element topic="Les-boucles.md"/>
+        <toc-element topic="Références.md"/>
+    </toc-element>
+    <toc-element topic="Les-pointeurs-et-la-gestion-de-la-mémoire.md">
+        <toc-element topic="Les-pointeurs.md"/>
+        <toc-element topic="Appels-de-fonctions-et-types-de-paramètres.md"/>
+        <toc-element topic="Lire-des-valeurs-avec-Scanf.md"/>
+        <toc-element topic="Gestion-de-la-mémoire.md"/>
+        <toc-element topic="Tableaux-vs-Tranches.md"/>
+    </toc-element>
+</instance-profile>
