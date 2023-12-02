@@ -5,7 +5,7 @@
 1. Vous devez Utiliser votre compte JetBrains éducation
     - si vous n'en avez pas, créez-en un [ici](https://www.jetbrains.com/fr-fr/community/education/#students)
 2. Installez [GoLand](https://www.jetbrains.com/go/)
-    - vous pouvez utiliser d'autres logiciels pour créez vos programmes Go, mais il est fortement recommandé d'utiliser
+    - vous pouvez utiliser d'autres logiciels pour créer vos programmes Go, mais il est fortement recommandé d'utiliser
       GoLand
 3. Installez [Go](https://go.dev)
     1. le plus simple est d'installer à travers l'interface de [Goland](https://www.jetbrains.com/go/learn/)

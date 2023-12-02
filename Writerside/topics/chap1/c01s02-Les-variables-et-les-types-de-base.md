@@ -21,7 +21,7 @@ spécifique d'utiliser une taille précise ou un nombre non-signé.
 Une déclaration de type `var` commence avec le mot-clé `var`, suivi par le nom de la variable ou une liste de noms de
 variables séparées par des virgules, et suivi par le type de la ou les variable(s).
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -47,7 +47,7 @@ les chaînes de caractères, la chaîne vide `""` est utilisée comme valeur zé
 
 On peut aussi préciser une valeur pour initialiser une variable au moment de la déclaration.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -70,7 +70,7 @@ automatiquement le type de la valeur utilisée. L'exemple suivant est équivalen
 près : les variables `x` et `y` sont maintenant de type `float64`, et non `float32`. Le type pour les nombres réels
 est `float64` par défaut.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -113,7 +113,7 @@ une erreur de compilation.
 Il est possible d'utiliser un raccourci pour les définitions de variables avec valeurs initiales. L'exemple suivant est
 équivalent à l'exemple précédent, sauf que `x` et `y` sont définies séparément.
 
-```Go
+```go
 package main
 
 import "fmt"

@@ -13,7 +13,7 @@ fichier (`Fprint`, `Fprintln`, `Fprintf`).
 
 ## Écrire dans une chaîne de caractères
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -38,7 +38,7 @@ format doit être donnée comme premier argument aux fonctions, suivie d'une ou 
 
 ### Nombres entiers
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -104,7 +104,7 @@ Les formats les plus courants :
 
 Pour les nombres réels, on peut spécifier la précision voulue.
 
-```Go
+```go
 package main
 
 import "fmt"

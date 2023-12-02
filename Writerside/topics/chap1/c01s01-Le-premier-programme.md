@@ -3,7 +3,7 @@
 Ce n'est pas original, mais le premier programme dans un nouveau langage de programmation est presque toujours le fameux
 *Hello World !*.
 
-```Go
+```go
 package main
 
 import "fmt"

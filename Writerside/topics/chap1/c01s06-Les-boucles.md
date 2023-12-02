@@ -10,7 +10,7 @@ différences :
 - le compteur de la boucle est normalement défini avec la notation abrégée utilisant le symbole `:=`
 - les 3 composantes principales sont optionnelles
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -36,7 +36,7 @@ Techniquement, il n'y a pas de boucles _while_ en Go. Le seul type de boucle uti
 l'exemple précédent. Puisque les parties _initialisation_ et _incrémentation_ sont optionnelles, on peut écrire une
 boucle uniquement avec la condition.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -60,7 +60,7 @@ Voici une **très mauvaise** manière d'écrire une boucle qui produit le même 
 obéit à la syntaxe du langage, mais qui est beaucoup plus difficile à lire, et qui peut causer des problèmes de
 maintenance de code plus tard.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -97,7 +97,7 @@ _stdout_ avec un format particulier. On utilise la fonction `len` pour obtenir l
 
 On peut également donner un tableau directement à la fonction `Println` pour en écrire le contenu.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -134,7 +134,7 @@ propriétés et de la gestion de la mémoire. Plus de détails viendront à ce s
 Il existe une autre façon de parcourir tous les éléments d'un tableau en Go : en utilisant `range`. C'est la manière la
 plus pratique et la plus utilisée de parcourir tous les éléments d'un tableau à partir du début.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -149,7 +149,7 @@ func loop5() {
 ```
 
 La sortie est la même que l'exemple précédent. À chaque tour de boucle, `i` a l'index courant, et `number` a la valeur
-de l'élément courant du tableau. Les avantages de ce type de boucle est qu'on n'a pas besoin de gérer l'index
+de l'élément courant du tableau. Les avantages de ce type de boucle sont qu'on n'a pas besoin de gérer l'index
 manuellement, il est incrémenté automatiquement, et la fin de boucle est vérifiée aussi automatiquement. Les
 désavantages de ce type de boucle sont qu'on ne pas modifier le contenu du tableau dans la boucle, et on ne peut pas
 parcourir les éléments du tableau dans un ordre différent (par exemple, de la fin vers le début).
@@ -157,7 +157,7 @@ parcourir les éléments du tableau dans un ordre différent (par exemple, de la
 Si on n'a pas besoin des index, mais seulement des valeurs des éléments dans le tableau, on doit alors faire la boucle
 de la façon suivante.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -173,10 +173,11 @@ func loop6() {
 
 Sortie :
 
-```Go
+```go
 2 5 3 4 7 1 7 
 ```
 
 Dans le langage Go, toutes les variables déclarées doivent être utilisées au moins une fois. Puisque dans cet exemple,
 on ne veut pas utiliser l'index des éléments du tableau, on utilise la barre de soulignement `_` à la place d'un nom de
-variable. Si on écrivait `i` à la place de `_` dans cet exemple, on obtiendrait l'erreur `i declared and not used` au moment de la compilation.
+variable. Si on écrivait `i` à la place de `_` dans cet exemple, on obtiendrait l'erreur `i declared and not used` au
+moment de la compilation.

@@ -10,7 +10,7 @@ le `else`.
 Utilisez les opérateurs `&&` pour la conjonction (et), `||` pour la disjonction (ou) et `!` pour la négation. Ajouter
 des parenthèses au besoin pour s'assurer que les opérateurs sont appliqués dans le bon ordre.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -35,7 +35,7 @@ x = -5 est plus petit ou égal à 0
 Il n'y a pas de syntaxe particulière pour les séquences de `if ... else`, il faut simplement démarrer un autre
 `if ... else` tout de suite après le premier `else`.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -67,7 +67,7 @@ possibles de la variable, et un `switch` sans variable avec des cas sur des expr
 
 ### `switch` sans variable
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -92,7 +92,7 @@ On obtiendra la même sortie avec ce changement. Dans ce cas-ci, remplacer `case
 que la condition `x < 0` couvre toutes les possibilités restantes. Notez qu'il n'est pas nécessaire d'utiliser
 des `break` pour terminer chaque cas.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -111,7 +111,7 @@ func conditional4(x int) {
 
 ### `switch` avec variable
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -139,7 +139,7 @@ Allo Alice !
 Lorsqu'on _switch_ sur une variable, les cas doivent être des valeurs spécifiques de la variable. Si on veut grouper
 plusieurs valeurs dans un même cas, on peut les séparer par des virgules, comme dans l'exemple suivant.
 
-```Go
+```go
 package main
 
 import "fmt"

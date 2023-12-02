@@ -2,7 +2,7 @@
 
 Une déclaration de fonction a la structure suivante en Go :
 
-```Go
+```go
 func nomFonction(param1 type1, param2 type2, ...) typeRetour {}
 ```
 
@@ -15,7 +15,7 @@ _camelCase_, et pour une fonction publique, on utilise le _PascalCase_.
 Si la fonction ne retourne rien, alors on doit omettre le type de retour. On ne doit **pas** utiliser `void` comme dans
 d'autres langages.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -33,7 +33,7 @@ Allo Alice !
 
 Voici une fonction qui fait un calcul simple et retourne le résultat :
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -48,13 +48,13 @@ Sortie avec l'appel `fmt.Println(square(4))` : `16`
 Il est possible pour une fonction de retourner plus qu'une valeur. Les types de retours doivent être séparés par des
 virgules, et des parenthèses doivent être utilisées autour des types de retour.
 
-```Go
+```go
 func nomFonction(param1 type1, param2 type2, ...) (typeRetour1, typeRetour2, ...) {}
 ```
 
 Voici une fonction qui retourne les 2 valeurs données en paramètre, mais en ordre inverse.
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -66,7 +66,7 @@ func swap(x int, y int) (int, int) {
 
 Appel de la fonction :
 
-```Go
+```go
 a, b := 2, 5
 fmt.Println(swap(a, b))
 ```
@@ -75,7 +75,7 @@ Sortie : `5 2`
 
 Voici une autre fonction pour échanger des valeurs, mais elle ne fonctionne pas :
 
-```Go
+```go
 package main
 
 import "fmt"
@@ -89,7 +89,7 @@ func swap2(x int, y int) {
 
 Appel de la fonction :
 
-```Go
+```go
 a, b := 2, 5
 fmt.Println(a, b)
 swap2(a, b)
@@ -104,7 +104,7 @@ Sortie :
 ```
 
 Plus de détails vont être donnés dans le chapitre suivant, mais la raison pourquoi cette fonction n'a aucun effet sur
-les variables `a` et `b` est que la fonction travaille sur des copies des valeurs de `a` et `b`. Les variables  `x`
+les variables `a` et `b` est que la fonction travaille sur des copies des valeurs de `a` et `b`. Les variables `x`
 et `y` sont initialisés avec les valeurs de `a` et `b`, mais sont indépendantes de `a` et `b`.
 
 La meilleure façon d'échanger les valeurs de deux variables en Go est celle-ci : `b, a = a, b`. `b` va obtenir la valeur
