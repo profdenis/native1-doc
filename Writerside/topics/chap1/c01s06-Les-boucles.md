@@ -1,4 +1,4 @@
-# Section 6 : les boucles
+# Section 6 : Les boucles
 
 ## Boucle avec un compteur
 

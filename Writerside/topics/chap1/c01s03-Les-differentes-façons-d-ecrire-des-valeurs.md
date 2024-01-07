@@ -1,4 +1,4 @@
-# Section 3 : les différentes façons d'écrire des valeurs
+# Section 3 : Les différentes façons d'écrire des valeurs
 
 En plus des fonctions `Print`, `Println` et `Printf` qui sont utilisées pour écrire sur le _stdout_, le paquet `fmt`
 contient des fonctions pour écrire dans une chaîne de caractères (`Sprint`, `Sprintln`, `Sprintf`) ou dans un
@@ -47,7 +47,11 @@ func print2() {
 	year := 2024
 	month := 1
 	day := 5
-
+	
+	fmt.Printf("année = %d\n", year)
+	fmt.Printf("%d-%d-%d\n", year, month, day)
+	fmt.Printf("%4d-%2d-%2d\n", year, month, day)
+	fmt.Printf("%4d-%02d-%02d\n", year, month, day)
 }
 ```
 
@@ -56,6 +60,8 @@ Sortie :
 ```
 année = 2024
 2024-1-5
+2024- 1- 5
+2024-01-05
 ```
 
 La chaîne de caractères décrivant le format (_chaîne de format_, ou _format string_ en anglais) doit inclure au moins
@@ -97,7 +103,7 @@ Les formats les plus courants :
 | `%v`             | format par défaut                           |
 | `%d`, `%x`, `%b` | nombres entiers en bases 10, 16 et 2        |
 | `%f`, `%F`       | nombres réels, avec un point, sans exposant |
-| `%e`, `%e`       | nombres réels, notation scientifique        |
+| `%e`, `%E`       | nombres réels, notation scientifique        |
 | `%s`             | chaînes de caractères                       |
 | `%t`             | booléen                                     |
 | `%T`             | type de la valeur                           |
@@ -112,10 +118,6 @@ import "fmt"
 func print3() {
 	x := 1234.5678
 	fmt.Printf("%f\n%.2f\n%.f\n", x, x, x)
-	fmt.Printf("année = %d\n", year)
-	fmt.Printf("%d-%d-%d\n", year, month, day)
-	fmt.Printf("%4d-%2d-%2d\n", year, month, day)
-	fmt.Printf("%4d-%02d-%02d\n", year, month, day)
 }
 ```
 

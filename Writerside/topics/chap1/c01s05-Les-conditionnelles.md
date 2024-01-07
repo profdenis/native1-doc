@@ -1,4 +1,4 @@
-# Section 5 : les conditionnelles
+# Section 5 : Les conditionnelles
 
 ## `if ... else`
 

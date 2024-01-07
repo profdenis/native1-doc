@@ -1,4 +1,4 @@
-# Section 4 : les fonctions
+# Section 4 : Les fonctions
 
 Une déclaration de fonction a la structure suivante en Go :
 
@@ -107,6 +107,9 @@ Plus de détails vont être donnés dans le chapitre suivant, mais la raison pou
 les variables `a` et `b` est que la fonction travaille sur des copies des valeurs de `a` et `b`. Les variables `x`
 et `y` sont initialisés avec les valeurs de `a` et `b`, mais sont indépendantes de `a` et `b`.
 
-La meilleure façon d'échanger les valeurs de deux variables en Go est celle-ci : `b, a = a, b`. `b` va obtenir la valeur
-de `a`, et `a` va obtenir la valeur de `b`. Ça fonctionne parce que les changements de valeurs vont se faire en
-parallèle.
+La meilleure façon d'échanger les valeurs de deux variables en Go est celle-ci :
+
+`b, a = a, b`.
+
+`b` va obtenir la valeur de `a`, et `a` va obtenir la valeur de `b`. Ça fonctionne parce que les changements de valeurs
+vont se faire en parallèle.

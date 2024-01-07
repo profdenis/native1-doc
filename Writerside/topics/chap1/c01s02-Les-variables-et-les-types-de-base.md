@@ -1,4 +1,4 @@
-# Section 2 : les variables et les types de base
+# Section 2 : Les variables et les types de base
 
 Référence : [A tour of Go](https://go.dev/tour/basics/11)
 
