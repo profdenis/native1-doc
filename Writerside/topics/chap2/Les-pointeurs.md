@@ -1,3 +1,0 @@
-# Section 1 : Les pointeurs
-
-Start typing here...

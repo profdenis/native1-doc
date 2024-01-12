@@ -30,3 +30,6 @@ func main() {
 5. `}` : les blocs de code sont délimités par des accolades (comme en Java), mais il n'y a pas de point-virgules `;` à
    la fin des lignes qui contiennent des énoncés qui ne nécessitent pas de définition de bloc
 
+## Compilation et exécution
+
+[//]: # (TODO: les base de la compilation et de l'exécution, avec GoLand et le terminal)

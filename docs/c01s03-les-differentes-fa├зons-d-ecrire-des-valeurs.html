@@ -1,0 +1,325 @@
+!DOCTYPE html SYSTEM "about:legacy-compat">
+<html data-colors-preset="contrast" data-primary-color="#307FFF" lang="en-US">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="UTF-8">
+    <meta content="noindex" name="robots">
+    <meta content="2024-01-07T13:45:46.117977345" name="built-on">
+    <meta content="${buildNumber}" name="build-number">
+    <title>Section 3 : Les diff&eacute;rentes fa&ccedil;ons d'&eacute;crire des valeurs | Help Instance</title>
+    <script id="virtual-toc-data" type="application/json">[
+        {
+            "id": "crire-dans-une-cha-ne-de-caract-res",
+            "level": 0,
+            "title": "Écrire dans une chaîne de caractères",
+            "anchor": "#crire-dans-une-cha-ne-de-caract-res"
+        },
+        {
+            "id": "crire-selon-un-format",
+            "level": 0,
+            "title": "Écrire selon un format",
+            "anchor": "#crire-selon-un-format"
+        }
+    ]</script>
+    <script id="topic-shortcuts" type="application/json"></script>
+    <link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">
+    <link href="https://jetbrains.com/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="https://jetbrains.com/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="https://jetbrains.com/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="https://jetbrains.com/site.webmanifest" rel="manifest">
+    <link color="#000000" href="https://jetbrains.com/safari-pinned-tab.svg" rel="mask-icon">
+    <meta content="#000000" name="msapplication-TileColor"/>
+    <meta content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"
+          name="msapplication-TileImage"/>
+    <meta content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"
+          name="msapplication-square70x70logo"/>
+    <meta content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"
+          name="msapplication-square150x150logo"/>
+    <meta content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"
+          name="msapplication-wide310x150logo"/>
+    <meta content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"
+          name="msapplication-square310x310logo"/>
+    <meta content="" name="image"><!-- Open Graph -->
+    <meta content="Section 3 : Les diff&eacute;rentes fa&ccedil;ons d'&eacute;crire des valeurs | Help Instance"
+          property="og:title"/>
+    <meta content="" property="og:description"/>
+    <meta content="" property="og:image"/>
+    <meta content="Help Instance Help" property="og:site_name"/>
+    <meta content="website" property="og:type"/>
+    <meta content="en_US" property="og:locale"/>
+    <meta content="c01s03-les-differentes-façons-d-ecrire-des-valeurs.html" property="og:url"/><!-- End Open Graph -->
+    <!-- Twitter Card -->
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="" name="twitter:site">
+    <meta content="Section 3 : Les diff&eacute;rentes fa&ccedil;ons d'&eacute;crire des valeurs | Help Instance"
+          name="twitter:title">
+    <meta content="" name="twitter:description">
+    <meta content="" name="twitter:creator">
+    <meta content="" name="twitter:image:src"><!-- End Twitter Card --><!-- Schema.org WebPage -->
+    <script type="application/ld+json"> {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "@id": "c01s03-les-differentes-façons-d-ecrire-des-valeurs.html#webpage",
+        "url": "c01s03-les-differentes-façons-d-ecrire-des-valeurs.html",
+        "name": "Section 3 : Les diff&eacute;rentes fa&ccedil;ons d'&eacute;crire des valeurs | Help Instance",
+        "description": "",
+        "image": "",
+        "inLanguage": "en-US"
+    }</script><!-- End Schema.org --><!-- Schema.org WebSite -->
+    <script type="application/ld+json"> {
+        "@type": "WebSite",
+        "@id": "/#website",
+        "url": "/",
+        "name": "Help Instance Help"
+    }</script><!-- End Schema.org --></head>
+<body data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"
+      data-breadcrumbs="c01-Les-bases-du-langage-Go.md|Chapitre 1 : Les bases du langage Go"
+      data-id="c01s03-Les-differentes-façons-d-ecrire-des-valeurs" data-main-title="Section 3 : Les diff&eacute;rentes fa&ccedil;ons d'&eacute;crire des valeurs"
+      data-template="article">
+<div class="wrapper">
+    <main class="panel _main">
+        <header class="panel__header">
+            <div class="container"><h3>Help Instance Help</h3>
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="inactive"><h1
+                        data-toc="c01s03-Les-differentes-façons-d-ecrire-des-valeurs"
+                        id="c01s03-Les-differentes-façons-d-ecrire-des-valeurs.md">Section 3 : Les diff&eacute;rentes fa&ccedil;ons
+                    d'&eacute;crire des valeurs</h1>
+                    <p id="177ffb0e_178">En plus des fonctions <code class="code" id="177ffb0e_179">Print</code>, <code
+                            class="code" id="177ffb0e_180">Println</code> et <code class="code"
+                                                                                   id="177ffb0e_181">Printf</code> qui
+                        sont utilis&eacute;es pour &eacute;crire sur le <span class="emphasis"
+                                                                              id="177ffb0e_182">stdout</span>, le paquet
+                        <code class="code" id="177ffb0e_183">fmt</code> contient des fonctions pour &eacute;crire dans
+                        une cha&icirc;ne de caract&egrave;res (<code class="code" id="177ffb0e_184">Sprint</code>, <code
+                                class="code" id="177ffb0e_185">Sprintln</code>, <code class="code" id="177ffb0e_186">Sprintf</code>)
+                        ou dans un fichier (<code class="code" id="177ffb0e_187">Fprint</code>, <code class="code"
+                                                                                                      id="177ffb0e_188">Fprintln</code>,
+                        <code class="code" id="177ffb0e_189">Fprintf</code>).</p>
+                    <ul class="list _ul" id="177ffb0e_190">
+                        <li class="list__item" id="177ffb0e_191"><p>Les fonctions se terminant par <span
+                                class="emphasis" id="177ffb0e_192">ln</span> ajoutent un changement de ligne (<code
+                                class="code" id="177ffb0e_193">\n</code>) &agrave; la fin de la cha&icirc;ne de caract&egrave;res
+                            &agrave; &eacute;crire.</p></li>
+                        <li class="list__item" id="177ffb0e_194"><p>Les fonctions se terminant par un <span
+                                class="emphasis" id="177ffb0e_195">f</span> utilisent une syntaxe sp&eacute;ciale pour
+                            <span class="control" id="177ffb0e_196">formatter</span> les cha&icirc;nes de caract&egrave;res.
+                        </p></li>
+                        <li class="list__item" id="177ffb0e_197"><p>Les fonctions commen&ccedil;ant avec un <span
+                                class="emphasis" id="177ffb0e_198">S</span> &eacute;crivent dans une cha&icirc;ne de
+                            caract&egrave;res (<span class="emphasis" id="177ffb0e_199">S</span> pour <span
+                                    class="emphasis" id="177ffb0e_200">string</span>)</p></li>
+                        <li class="list__item" id="177ffb0e_201"><p>Les fonctions commen&ccedil;ant avec un <span
+                                class="emphasis" id="177ffb0e_202">F</span> &eacute;crivent dans un fichier (<span
+                                class="emphasis" id="177ffb0e_203">F</span> pour <span class="emphasis"
+                                                                                       id="177ffb0e_204">file</span>)
+                        </p>
+                            <ul class="list _ul" id="177ffb0e_205">
+                                <li class="list__item" id="177ffb0e_206"><p>Les fonctions sur les fichiers seront pr&eacute;sent&eacute;es
+                                    plus loin, dans le chapitre consacr&eacute; &agrave; la gestion des fichiers.</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <section class="chapter"><h2 data-toc="crire-dans-une-cha-ne-de-caract-res"
+                                                 id="crire-dans-une-cha-ne-de-caract-res">&Eacute;crire dans une
+                        cha&icirc;ne de caract&egrave;res</h2>
+                        <div class="code-block" data-lang="go">
+                            package main
+
+                            import &quot;fmt&quot;
+
+                            func print1() {
+                            year := 2024
+                            output := fmt.Sprintln(&quot;ann&eacute;e =&quot;, year)
+                            fmt.Println(output)
+                            }
+                        </div>
+                        <p id="177ffb0e_208">Dans cet exemple simplifi&eacute;, il serait pr&eacute;f&eacute;rable
+                            d'utiliser <code class="code" id="177ffb0e_209">Println</code> directement sur les deux
+                            valeurs &agrave; &eacute;crire (<code class="code" id="177ffb0e_210">fmt.Pprintln(&quot;ann&eacute;e
+                                =&quot;, year)</code>), mais dans un exemple plus complexe, lorsqu'il est n&eacute;cessaire
+                            d'&eacute;crire la m&ecirc;me cha&icirc;ne de caract&egrave;res &agrave; plusieurs reprises,
+                            possiblement &agrave; des endroits diff&eacute;rents (<span class="emphasis"
+                                                                                        id="177ffb0e_211">stdout</span>,
+                            fichier, ...), &eacute;crire dans une cha&icirc;ne en premier peut simplifier le code plus
+                            loin dans le programme, surtout si on a besoin de formatter les valeurs de fa&ccedil;on
+                            particuli&egrave;re.</p></section>
+                    <section class="chapter"><h2 data-toc="crire-selon-un-format" id="crire-selon-un-format">&Eacute;crire
+                        selon un format</h2>
+                        <p id="177ffb0e_212">Le m&ecirc;me principe s'applique aux fonctions <code class="code"
+                                                                                                   id="177ffb0e_213">Printf</code>,
+                            <code class="code" id="177ffb0e_214">Sprintf</code> et <code class="code" id="177ffb0e_215">Fprintf</code>:
+                            une cha&icirc;ne de caract&egrave;res d&eacute;crivant le format doit &ecirc;tre donn&eacute;e
+                            comme premier argument aux fonctions, suivie d'une ou plusieurs valeurs &agrave; formatter.
+                        </p>
+                        <section class="chapter"><h3 data-toc="nombres-entiers" id="nombres-entiers">Nombres
+                            entiers</h3>
+                            <div class="code-block" data-lang="go">
+                                package main
+
+                                import &quot;fmt&quot;
+
+                                func print2() {
+                                year := 2024
+                                month := 1
+                                day := 5
+
+                                fmt.Printf(&quot;ann&eacute;e = %d\n&quot;, year)
+                                fmt.Printf(&quot;%d-%d-%d\n&quot;, year, month, day)
+                                fmt.Printf(&quot;%4d-%2d-%2d\n&quot;, year, month, day)
+                                fmt.Printf(&quot;%4d-%02d-%02d\n&quot;, year, month, day)
+                                }
+                            </div>
+                            <p id="177ffb0e_217">Sortie :</p>
+                            <div class="code-block" data-lang="none">
+                                ann&eacute;e = 2024
+                                2024-1-5
+                                2024- 1- 5
+                                2024-01-05
+                            </div>
+                            <p id="177ffb0e_219">La cha&icirc;ne de caract&egrave;res d&eacute;crivant le format (<span
+                                    class="emphasis" id="177ffb0e_220">cha&icirc;ne de format</span>, ou <span
+                                    class="emphasis" id="177ffb0e_221">format string</span> en anglais) doit inclure au
+                                moins une entr&eacute;e d&eacute;butant par le caract&egrave;re <code class="code"
+                                                                                                      id="177ffb0e_222">%</code>,
+                                suivi par la description du format. Dans l'exemple pr&eacute;c&eacute;dent, il y a 4
+                                sorties. Dans la premi&egrave;re, la sortie sera identique &agrave; l'exemple pr&eacute;c&eacute;dent.
+                                Le <code class="code" id="177ffb0e_223">%d</code> va &ecirc;tre remplac&eacute; par la
+                                valeur de la variable <code class="code" id="177ffb0e_224">year</code>. Le <code
+                                        class="code" id="177ffb0e_225">d</code> indique que la valeur sera un nombre
+                                entier en base 10 (<span class="emphasis" id="177ffb0e_226">d&eacute;cimal</span>). On
+                                pourrait utiliser</p>
+                            <ul class="list _ul" id="177ffb0e_227">
+                                <li class="list__item" id="177ffb0e_228"><p><code class="code"
+                                                                                  id="177ffb0e_229">%x</code> pour un
+                                    nombre entier en base 16 (<span class="emphasis" id="177ffb0e_230">hexad&eacute;cimal</span>)
+                                </p></li>
+                                <li class="list__item" id="177ffb0e_231"><p><code class="code"
+                                                                                  id="177ffb0e_232">%o</code> pour un
+                                    nombre entier en base 8 (<span class="emphasis" id="177ffb0e_233">octal</span>)</p>
+                                </li>
+                                <li class="list__item" id="177ffb0e_234"><p><code class="code"
+                                                                                  id="177ffb0e_235">%b</code> pour un
+                                    nombre entier en base 2 (<span class="emphasis" id="177ffb0e_236">binaire</span>)
+                                </p></li>
+                            </ul>
+                            <p id="177ffb0e_237">Dans la deuxi&egrave;me sortie, il y a 3 formats &agrave; l'int&eacute;rieur
+                                de la cha&icirc;ne de format, et ils sont s&eacute;par&eacute;s par des tirets qui ne
+                                font pas partie des formats, mais qui feront partie de la sortie. Le probl&egrave;me est
+                                que la sortie n'est pas tr&egrave;s belle parce que les valeurs pour le mois et la journ&eacute;e
+                                sont plus petites que 10, alors qu'habituellement, on r&eacute;serve 2 emplacements (ou
+                                2 colonnes) pour ces valeurs m&ecirc;me si elles n'en n'ont pas besoin.</p>
+                            <p id="177ffb0e_238">On peut remplacer le deuxi&egrave;me format par celui-ci : <code
+                                    class="code" id="177ffb0e_239">&quot;%4d-%2d-%2d\n&quot;</code>. La sortie sera
+                                alors <code class="code" id="177ffb0e_240">2024- 1- 5</code>, ce qui n'est pas vraiment
+                                mieux. On sp&eacute;cifie que l'on veut avoir 4 colonnes pour l'ann&eacute;e, 2 colonnes
+                                pour le mois et aussi 2 colonnes pour le jour, mais par d&eacute;faut, les colonnes
+                                libres sont remplies avec des espaces.</p>
+                            <p id="177ffb0e_241">Si on remplace le deuxi&egrave;me format par celui-ci : <code
+                                    class="code" id="177ffb0e_242">&quot;%4d-%02d-%02d&quot;</code>, alors les colonnes
+                                libres seront remplies par des z&eacute;ros, ce qui correspond au format habituel <code
+                                        class="code" id="177ffb0e_243">2024-01-05</code>.</p>
+                            <p id="177ffb0e_244">Cet exemple montre comment formatter une date dans un format pr&eacute;cis,
+                                mais il existe plusieurs autres formats possibles. Formatter des dates est un besoin
+                                commun, qui doit supporter des formats diff&eacute;rents selon les param&egrave;tres de
+                                localisation de l'application. Le paquet <code class="code"
+                                                                               id="177ffb0e_245">time</code> peut
+                                &ecirc;tre utilis&eacute; pour, entre autres, formatter les dates et les heures. Pour
+                                plus de d&eacute;tails : <a data-external="true"
+                                                            href="https://gosamples.dev/date-time-format-cheatsheet/" id="177ffb0e_246"
+                                                            rel="noopener noreferrer">Date and time format in Go
+                                    cheatsheet</a></p></section>
+                        <section class="chapter"><h3 data-toc="formatter-d-autres-types" id="formatter-d-autres-types">
+                            Formatter d'autres types</h3>
+                            <p id="177ffb0e_247">R&eacute;f&eacute;rence : <a data-external="true"
+                                                                              href="https://pkg.go.dev/fmt" id="177ffb0e_248"
+                                                                              rel="noopener noreferrer">Paquet <code
+                                    class="code" id="177ffb0e_249">fmt</code></a></p>
+                            <p id="177ffb0e_250">Les formats les plus courants :</p>
+                            <div class="table-wrapper">
+                                <table class="wide" id="177ffb0e_251">
+                                    <thead>
+                                    <tr class="ijRowHead" id="177ffb0e_252">
+                                        <th id="177ffb0e_253"><p>Formats</p></th>
+                                        <th id="177ffb0e_254"><p>D&eacute;tails</p></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr id="177ffb0e_255">
+                                        <td id="177ffb0e_256"><p><code class="code" id="177ffb0e_257">%v</code></p></td>
+                                        <td id="177ffb0e_258"><p>format par d&eacute;faut</p></td>
+                                    </tr>
+                                    <tr id="177ffb0e_259">
+                                        <td id="177ffb0e_260"><p><code class="code" id="177ffb0e_261">%d</code>, <code
+                                                class="code" id="177ffb0e_262">%x</code>, <code class="code"
+                                                                                                id="177ffb0e_263">%b</code>
+                                        </p></td>
+                                        <td id="177ffb0e_264"><p>nombres entiers en bases 10, 16 et 2</p></td>
+                                    </tr>
+                                    <tr id="177ffb0e_265">
+                                        <td id="177ffb0e_266"><p><code class="code" id="177ffb0e_267">%f</code>, <code
+                                                class="code" id="177ffb0e_268">%F</code></p></td>
+                                        <td id="177ffb0e_269"><p>nombres r&eacute;els, avec un point, sans exposant</p>
+                                        </td>
+                                    </tr>
+                                    <tr id="177ffb0e_270">
+                                        <td id="177ffb0e_271"><p><code class="code" id="177ffb0e_272">%e</code>, <code
+                                                class="code" id="177ffb0e_273">%E</code></p></td>
+                                        <td id="177ffb0e_274"><p>nombres r&eacute;els, notation scientifique</p></td>
+                                    </tr>
+                                    <tr id="177ffb0e_275">
+                                        <td id="177ffb0e_276"><p><code class="code" id="177ffb0e_277">%s</code></p></td>
+                                        <td id="177ffb0e_278"><p>cha&icirc;nes de caract&egrave;res</p></td>
+                                    </tr>
+                                    <tr id="177ffb0e_279">
+                                        <td id="177ffb0e_280"><p><code class="code" id="177ffb0e_281">%t</code></p></td>
+                                        <td id="177ffb0e_282"><p>bool&eacute;en</p></td>
+                                    </tr>
+                                    <tr id="177ffb0e_283">
+                                        <td id="177ffb0e_284"><p><code class="code" id="177ffb0e_285">%T</code></p></td>
+                                        <td id="177ffb0e_286"><p>type de la valeur</p></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p id="177ffb0e_287">Pour les nombres r&eacute;els, on peut sp&eacute;cifier la pr&eacute;cision
+                                voulue.</p>
+                            <div class="code-block" data-lang="go">
+                                package main
+
+                                import &quot;fmt&quot;
+
+                                func print3() {
+                                x := 1234.5678
+                                fmt.Printf(&quot;%f\n%.2f\n%.f\n&quot;, x, x, x)
+                                }
+                            </div>
+                            <p id="177ffb0e_289">Sortie :</p>
+                            <div class="code-block" data-lang="none">
+                                1234.567800
+                                1234.57
+                                1235
+                            </div>
+                        </section>
+                    </section>
+                    <div class="last-modified"> Last modified: 07 janvier 2024</div>
+                    <div data-feedback-placeholder="true"></div>
+                    <div class="navigation-links _bottom"><a class="navigation-links__prev"
+                                                             href="c01s02-les-variables-et-les-types-de-base.html">Section
+                        2 : Les variables et les types de base</a> <a class="navigation-links__next"
+                                                                      href="c01s04-les-fonctions.html">Section 4 : Les
+                        fonctions</a></div>
+                </article>
+                <div id="disqus_thread"></div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script>
+</body>
+</html>
