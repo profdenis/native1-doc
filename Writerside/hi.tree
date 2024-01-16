@@ -14,6 +14,7 @@
         <toc-element topic="c01s04-Les-fonctions.md"/>
         <toc-element topic="c01s05-Les-conditionnelles.md"/>
         <toc-element topic="c01s06-Les-boucles.md"/>
+        <toc-element topic="ch01-Exercices.md"/>
         <toc-element topic="c01-References.md"/>
     </toc-element>
     <toc-element topic="ch02-Les-pointeurs-et-la-gestion-de-la-memoire.md">
@@ -22,17 +23,21 @@
         <toc-element topic="ch02s03-Section-3-Lire-des-valeurs-avec-Scanf.md">
         </toc-element>
         <toc-element topic="ch02s04-Section-4-Validation-des-entrees.md"/>
+        <toc-element topic="ch02-Exercices.md"/>
     </toc-element>
     <toc-element topic="ch03-Tableaux-vs-Tranches.md">
         <toc-element topic="ch03s01-Section-1-valeur-ou-pointeur.md"/>
-        <toc-element topic="ch03-s02-Section-2-Tranches.md"/>
+        <toc-element topic="ch03s02-Section-2-Tranches.md"/>
         <toc-element topic="ch03s03-Section-3-Chaines-de-caracteres.md"/>
+        <toc-element topic="ch03-Exercices.md"/>
     </toc-element>
     <toc-element topic="ch04-Chapitre-4-La-gestion-des-fichiers.md">
         <toc-element topic="ch04s01-Section-1-Lire-le-contenu-d-un-fichier.md"/>
         <toc-element topic="ch04s02-Section-2-Ecrire-dans-un-fichier.md"/>
         <toc-element topic="ch04s03-Section-3-Copier-un-fichier.md"/>
     </toc-element>
+    <toc-element topic="ch05-Chapitre-5-Les-structures.md"/>
     <toc-element topic="Gestion-de-la-memoire.md">
     </toc-element>
+    <toc-element topic="Chapitre-7-Les-listes-chaînées.md"/>
 </instance-profile>

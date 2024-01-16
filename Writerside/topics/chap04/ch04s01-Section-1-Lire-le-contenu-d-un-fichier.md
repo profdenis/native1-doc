@@ -37,21 +37,22 @@ fonction mettra un terme à l'exécution du programme parce qu'on utilise le niv
 qu'on ne peut pas continuer. Le `f` à la fin de la fonction est similaire au `f` à la fin de `fmt.Printf`, ce qui veut
 dire que la fonction accepte les formats pour la sortie.
 
-Voir [Paquet log dans la doc officielle](https://pkg.go.dev/log#Fatalf) pour plus de détails sur le paquet `log`.
+Voir [la doc officielle](https://pkg.go.dev/log#Fatalf) pour plus de détails sur le paquet `log`.
 
 L'erreur la plus commune sera une erreur d'ouverture du fichier, similaire
-à `open allo.txt: no such file or directory`. Il faut que le fichier soit dans le même dossier que le programme compilé
-en fichier exécutable (extension `.exe` sous Windows). On peut également spécifier un chemin relatif ou absolu avec un
-ou plusieurs dossiers séparés par des barres obliques.
+à `open allo.txt: no such file or directory`. Il faut en général que le fichier soit dans le même dossier que le
+programme compilé en fichier exécutable (extension `.exe` sous Windows) si on spécifie seulement le nom du fichier à
+ouvrir sans spécifier de chemin. On peut également spécifier un chemin relatif ou absolu avec un ou plusieurs dossiers
+séparés par des barres obliques. Le chemin relatif sera à partir du dossier où on exécute le programme.
 
-[//]: # (TODO: dossier par défaut ? le dossier du projet ?)
+Si on exécute le programme à travers l'interface graphique de GoLand, ça pourrait être différent, dépendamment de sa
+configuration. Normalement, le fichier `.go` sera compilé dans un dossier temporaire, et exécuté à partir du dossier du
+principal du projet. Donc le programme essaiera d'ouvrir un fichier à partir de ce dossier (à moins d'avoir spécifié un
+chemin absolu).
 
-Il est probablement plus facile de compiler le programme à partir du terminal dans ce cas-ci (avec `go build` quand on
-est situé dans le dossier contenant le code à compiler), et d'exécuter le programme
-dans le terminal pour être certain de pouvoir trouver le fichier. Par défaut dans GoLand, si on clique sur le triangle
-vert pour exécuter le programme, il sera compilé dans un dossier temporaire et exécuté dans ce dossier, donc le
-programme ne trouvera le fichier `allo.txt` même s'il est dans le même dossier que les fichiers `chap4.go`
-et `section1.go`. Il faut que le fichier `allo.txt` soit dans le même dossier d'où on exécute le programme.
+À partir d'un terminal, on peut compiler le programme à partir du dossier contenant le fichier `.go` avec `go build`, et
+exécuter le programme dans le terminal avec une commande du genre `./main.exe`. Dans ce cas, l'ouverture d'un fichier se
+fera relativement au dossier courant.
 
 ## Même exemple, mais avec ouverture et fermeture de fichier explicites
 

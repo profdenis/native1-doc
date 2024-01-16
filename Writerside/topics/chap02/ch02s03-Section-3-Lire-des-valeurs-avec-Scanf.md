@@ -5,7 +5,7 @@ sortie standard (_stdout_), `Scanf` lit des valeurs sur l'entrée standard (_std
 sont semblables à `Scanf`, mais lisent à partir, respectivement, d'une chaîne de caractères et d'un fichier.
 
 Des alternatives à `Scanf` vont être présentées dans la section suivante. `Scanf` est un peu capricieuse, donc il faut
-faire attention quand on l'utilise.
+faire attention quand on l'utilise. Cette fonction est basée sur la fonction `scanf` du langage C.
 
 ## Exemple 1
 

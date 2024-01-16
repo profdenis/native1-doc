@@ -41,6 +41,21 @@ Non seulement la taille d'une tranche est dynamique (c'est pour ça qu'on appell
 tableaux dynamiques), mais on peut également modifier leur contenu sans avoir besoin d'utiliser un pointeur vers la
 tranche, comme dans l'exemple précédent.
 
-Plus de détails sur les tranches seront présentés dans un autre chapitre, après la présentation des
-structures (`struct`) et des principes de la gestion de la mémoire. Voici la représentation mémoire des variables de
-l'exemple, mais pour comprendre les détails, il faut d'abord comprendre ce qu'est une structure.
+Voici la représentation mémoire des variables de l'exemple, mais pour comprendre les détails, il va falloir comprendre
+ce qu'est une structure. Plus de détails sur les tranches seront présentés dans un autre chapitre, après la présentation
+des structures (`struct`) et des principes de la gestion de la mémoire. Mais en attendant, on peut voir une structure
+comme étant un regroupement de plusieurs variables ensemble, un peu comme une classe avec ses attributs dans un langage
+orienté-objet.
+
+![ch03s02-Tranche.jpg](ch03s02-Tranche.jpg)
+
+Dans une structure représentant une tranche, on a essentiellement 2 nombres entiers, la longueur et la
+capacité de la tranche, suivi d'un pointeur vers un tableau. La capacité est la longueur du tableau, égale à 3 dans
+l'exemple, et la longueur est le nombre d'emplacements utilisés dans le tableau, aussi égale à 3 dans l'exemple. Comme
+mentionné précédemment, les tranches vont être expliquées plus en détails dans un autre chapitre. Le plus important pour
+l'instant, c'est qu'une tranche contient un pointeur vers un tableau, et lorsque l'on passe une tranche en paramètre à
+une fonction, on copie la structure, incluant le pointeur vers le tableau, mais on ne copie le tableau lui-même. C'est
+un peu comme si on passait un pointeur à un tableau comme dans un exemple précédent, mais accompagné de 2 valeurs
+supplémentaires. Donc quand on modifie le contenu de la tranche avec `s[0] = 100`, on modifie réellement le tableau
+caché derrière la tranche, qui lui n'est pas copié, mais partagé entre `maTranche` et `s`.
+

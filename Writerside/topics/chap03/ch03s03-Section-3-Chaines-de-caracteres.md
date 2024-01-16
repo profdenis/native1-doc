@@ -35,8 +35,6 @@ Les chaînes Go sont encodées en UTF-8, un seul caractère dans une chaîne Go 
 représenté par un ou plusieurs octets. Donc le nombre de caractères dans une chaîne n'est pas égal, en général, au
 nombre d'octets dans une tranche représentant la même chaîne. C'est en partie pourquoi les chaînes sont immuables en Go.
 
-[//]: # (TODO: exemple avec strings.Builder)
-
 ## Utilisation d'un `strings.Builder`
 
 Voici un exemple très simple d'utilisation d'un `strings.Builder`.
@@ -67,4 +65,4 @@ Dans cet exemple, `strings.Builder` est utilisé pour faire une concaténation e
 caractères. C'est très utile lorsque vous avez besoin de concaténer un grand nombre de chaînes, car il est plus
 efficace en termes de performance que l'opérateur `+` ou que `fmt.Sprintf`.
 
-Plus d'exemples sur l'utilisation des `strings.Builder` seront présentés dans le chapitre sur la gestion des fichiers.
+Plus d'exemples sur l'utilisation des `strings.Builder` seront présentés plus loin.

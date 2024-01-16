@@ -62,10 +62,10 @@ Voici ce que fait la fonction, étape par étape :
   au fichier de destination. S'il y a une erreur, elle la retourne.
 - Si toutes les étapes ci-dessus se sont déroulées sans erreur, elle retourne nil indiquant que l'opération a réussi.
 
-Ensuite, nous avons la fonction `section2c()`, qui appelle la fonction `CopyFileWithLineNumbers` :
+Ensuite, nous avons la fonction `section3()`, qui appelle la fonction `CopyFileWithLineNumbers` :
 
 ```Go
-func section2c() {
+func section3() {
 	err := CopyFileWithLineNumbers("allo.txt", "allo2.txt")
 	if err != nil {
 		fmt.Println("Erreur lors de la copie du fichier:", err)

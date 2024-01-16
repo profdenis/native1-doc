@@ -68,7 +68,7 @@ opérations d'E/S de fichiers de la bibliothèque standard.
 func section2b() {
 	nAttempts := 3
 	// demander le nom du fichier
-	fmt.Println("Nom du fichier dans lequel enregistrer les données : ")
+	fmt.Print("Nom du fichier dans lequel enregistrer les données : ")
 	filename, err := ReadNonEmptyLine(nAttempts)
 	if err != nil {
 		log.Fatalf("Impossible de lire le nom du fichier : %s", err)
@@ -142,6 +142,8 @@ Voici un pas à pas de la fonction `section2b` :
 précédent écrit du texte directement dans le fichier. `encoding/csv` permet de lire et d'écrire plus efficacement. Deux
 fonctions qui utilisent `encoding/csv` suivent. La première lit un fichier _CSV_, et l'autre écrit dans un fichier
 _CSV_.
+
+## Lire et écrire des fichiers _CSV_
 
 ```Go
 func readCSVFile() {

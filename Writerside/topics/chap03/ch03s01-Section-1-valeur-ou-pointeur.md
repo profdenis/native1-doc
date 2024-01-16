@@ -32,13 +32,13 @@ func main() {
 }
 ```
 
-[//]: # (TODO: diagramme )
+![ch03s01-Tableau 1a.jpg](ch03s01-Tableau-1a.jpg)
 
 Dans l'exemple ci-dessus, même si la fonction `modifierTentative` a tenté de modifier le premier élément du
 tableau `tab`, cela n'a pas eu d'impact sur `monTableau` dans la fonction `main`. C'est pourquoi lorsque nous
 imprimons `monTableau` après l'appel à `modifierTentative`, les valeurs restent inchangées.
 
-[//]: # (TODO: diagramme )
+![ch03s01-Tableau-1b.jpg](ch03s01-Tableau-1b.jpg)
 
 Le même principe s'applique si on crée un autre tableau à partir de `monTableau`. Quand on fait
 `autreTableau := monTableau`, on crée un autre espace mémoire pour `autreTableau` du même type et de même longueur que
@@ -72,7 +72,7 @@ func main() {
 }
 ```
 
-[//]: # (TODO: diagramme )
+![ch03s01-Tableau-2.jpg](ch03s01-Tableau-2.jpg)
 
 Dans cet exemple, `modifierTentative` accepte un pointeur vers un tableau de 3 entiers (`*[3]int`). À l'intérieur de
 la fonction, nous utilisons `(*tab)[0]` pour accéder au premier élément du tableau pointé par `tab` et pour le modifier.

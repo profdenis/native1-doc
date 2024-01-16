@@ -5,8 +5,6 @@ valeurs. Les exemples de la section précédente utilisaient le _stdin_, mais le
 on utilisait `Sscanf` ou `Fscanf`. Cette section inclut quelques alternatives. Le chapitre sur la gestion des fichiers
 contiendra plus d'exemples.
 
-[//]: # (TODO: fmt.Scanln ?)
-
 ## Lire une ligne complète jusqu'à la fin
 
 Il est préférable d'utiliser un `Reader` sur le _stdin_ que d'utiliser `Scanf` pour lire une ligne complète, comme
@@ -119,10 +117,6 @@ Bonjour , vous avez 0 ans.
 On pourrait définir une autre version de `ReadLine`, qui n'accepterait pas les chaînes vides, qu'on pourrait nommer par
 exemple `ReadLineNonEmpty` ou `ReadNonEmptyLine`.
 
-**Exercice** : Écrire et tester la fonction `ReadNonEmptyLine`, qui, tant que l'entrée est la chaîne vide ou qu'il y a
-une erreur lors de la lecture de la ligne, refuse cette entrée et redemande d'entrer une chaîne. Vous pouvez vous baser
-sur la fonction `ReadInt`, présentée dans la prochaine section.
-
 ## Lire un entier
 
 La fonction `ReadInt` utilise la fonction `ReadLine` de la section précédente et s'assure que l'entrée est vraiment un
@@ -196,17 +190,4 @@ Donc, cette fonction essaie de lire un ensemble de caractères depuis l'entrée 
 caractères en un entier, et le renvoie. Si elle n'est pas en mesure de lire l'entrée correctement, ou si les caractères
 lus ne représentent pas un entier, elle renvoie une erreur dès que le nombre limite d'essais a été atteint.
 
-[//]: # (TODO: organiser les exercices de meilleur façon, dans leur propre section ?)
-
-**Exercice** : Créez une copie de la fonction `section4a` nommée `section4b` qui a fait la même chose, mais qui utilise
-les fonctions `ReadNonEmptyLine` et `ReadInt` pour valider les entrées.
-
-**Exercice** : Faites une version de `ReadInt` qui utilise `Scanf` à la place de `ReadLine`.
-
-**Exercice** : Faites une autre version de `ReadInt` (à partir de l'originale ou de celle de l'exercice précédent), qui,
-lorsque `nAttempts` est plus petit que 1, va toujours redemander une entrée, donc il n'y aura pas de limite au nombre d'
-essais. Lorsque `nAttempts` est au moins 1, la fonction doit faire la même chose qu'avant.
-
-**Exercice** : Faites une version de `ReadNonEmptyLine` qui accepte en paramètre un nombre d'essais, comme
-pour `ReadInt`. Gérez le nombre d'Essais de la même façon que l'exemple précédent.
 
