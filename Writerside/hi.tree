@@ -35,6 +35,7 @@
         <toc-element topic="ch04s01-Section-1-Lire-le-contenu-d-un-fichier.md"/>
         <toc-element topic="ch04s02-Section-2-Ecrire-dans-un-fichier.md"/>
         <toc-element topic="ch04s03-Section-3-Copier-un-fichier.md"/>
+        <toc-element topic="ch04s04-Autres-façons-d-ouvrir-un-fichier.md"/>
     </toc-element>
     <toc-element topic="ch05-Chapitre-5-Les-structures.md"/>
     <toc-element topic="Gestion-de-la-memoire.md">
