@@ -37,7 +37,11 @@
         <toc-element topic="ch04s03-Section-3-Copier-un-fichier.md"/>
         <toc-element topic="ch04s04-Autres-facons-d-ouvrir-un-fichier.md"/>
     </toc-element>
-    <toc-element topic="ch05-Chapitre-5-Les-structures.md"/>
+    <toc-element topic="ch05-Chapitre-5-Les-structures.md">
+        <toc-element topic="ch05s01-Section-1-Valeur-vs-pointeur.md"/>
+        <toc-element topic="ch05s02-Section-2-Methodes.md"/>
+        <toc-element topic="ch05s03-Section-3-Les-tranches.md"/>
+    </toc-element>
     <toc-element topic="Gestion-de-la-memoire.md">
     </toc-element>
     <toc-element topic="Chapitre-7-Les-listes-chaînées.md"/>

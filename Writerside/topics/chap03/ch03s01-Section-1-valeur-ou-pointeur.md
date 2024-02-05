@@ -48,9 +48,25 @@ Si vous voulez que les modifications se répercutent sur le tableau d'origine, v
 tranches (`slice`) ou passer un pointeur vers le tableau d'origine. Les tranches seront présentées un peu plus loin. Un
 exemple avec un pointeur vers un tableau suit.
 
+## La longueur du tableau fait partie du type
+
+Le fait qu'en Go, un tableau est de type valeur, implique que, en plus du type des éléments du tableau, la longueur
+du tableau fait partie du type du tableau. Il n'est pas possible, par exemple, de passer en argument un tableau de type
+`[4]int` à une fonction qui demande un tableau de type `[3]int`.
+
+Modifiez l'exemple précédent en modifiant soit la taille du tableau dans le `main`, soit la longueur du tableau dans la
+déclaration du paramètre de la fonction, et vous obtiendrez une erreur du
+genre `cannot use monTableau (variable of type [4]int) as [3]int value in argument to modifierTentative`. Le programme
+ne compilera pas parce que les types ne correspondent pas. Puisque les valeurs du tableau donné en argument doivent être
+copiées dans le tableau local à la fonction, non seulement les valeurs doivent être du même type, mais il doit y avoir
+le même nombre de valeurs (c.-à-d. la même longueur de tableau) dans les deux tableaux.
+
+Pour passer un tableau à une fonction, on utilise soit un pointeur vers un tableau, ou plus couramment une tranche, qui
+contient un pointeur vers un tableau.
+
 ## Pointeur vers un tableau
 
-L'exemple suivant est une modification de l'exemple suivant, sauf que la fonction accepte un pointeur vers le tableau
+L'exemple suivant est une modification de l'exemple précédent, sauf que la fonction accepte un pointeur vers le tableau
 plutôt qu'une copie du tableau.
 
 ```go
@@ -74,10 +90,10 @@ func main() {
 
 ![ch03s01-Tableau-2.jpg](ch03s01-Tableau-2.jpg)
 
-Dans cet exemple, `modifierTentative` accepte un pointeur vers un tableau de 3 entiers (`*[3]int`). À l'intérieur de
-la fonction, nous utilisons `(*tab)[0]` pour accéder au premier élément du tableau pointé par `tab` et pour le modifier.
-Les parenthèses sont nécessaires ici parce que les crochets `[]` ont préséance sur l'astérisque `*`, donc il faut
-déréférencer le pointeur vers un tableau avant d'essayer d'accéder à ses éléments.
+Dans cet exemple, `modifierTentative` accepte un pointeur vers un tableau de 3 entiers (type `*[3]int`). À l'intérieur
+de la fonction, nous utilisons `(*tab)[0]` pour accéder au premier élément du tableau pointé par `tab` et pour le
+modifier. Les parenthèses sont nécessaires ici parce que les crochets `[]` ont préséance sur l'astérisque `*`, donc il
+faut déréférencer le pointeur vers un tableau avant d'essayer d'accéder à ses éléments.
 
 Dans la fonction `main`, nous passons l'adresse du tableau (`&monTableau`) à la fonction `modifierTentative`.
 
