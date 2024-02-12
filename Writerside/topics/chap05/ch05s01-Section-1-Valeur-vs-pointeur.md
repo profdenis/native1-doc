@@ -68,6 +68,8 @@ de déréférencer le pointeur avec l'astérisque `*` avant d'accéder à ces ch
 créateurs de Go ont décidé d'introduire la notation avec le `.` non seulement directement sur les structures, mais aussi
 sur les pointeurs vers des structures.
 
+![new(Point)](Structure3_240204_205941.jpg)
+
 Il est également possible de déclarer une fonction pour créer un nouveau point, similaire à un constructeur dans un
 langage orienté-objet. Dans GoLand, il est possible de générer un constructeur automatiquement avec le raccourci
 `alt-ins`. Cette fonction démontre également qu'il est possible de spécifier la valeur des champs d'une structure par
@@ -84,4 +86,3 @@ certain cas. Dans la plupart des cas, l'impact sera faible, mais de bonnes prati
 est préférable. Les langages qui n'ont pas de vidangeur, comme le C et le C++, ne pourront pas récupérer la mémoire
 perdue, ce qui créera une fuite de mémoire (_memory leak_).
 
-![new(Point)](Structure3_240204_205941.jpg)

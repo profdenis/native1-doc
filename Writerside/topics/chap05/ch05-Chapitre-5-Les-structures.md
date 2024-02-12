@@ -53,9 +53,6 @@ Puisque les champs `Name` et `Age` commencent par des majuscules, ils sont publi
 minuscule, ils seraient privés, donc accessibles seulement au code situé dans le même paquet (`package`) que sa
 déclaration. En Go, l'accessibilité (public vs. privé) est toujours définie au niveau du paquet.
 
-## Méthodes
-
-## Tranches
 
 
 
