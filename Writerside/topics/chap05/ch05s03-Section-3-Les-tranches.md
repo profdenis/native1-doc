@@ -1,3 +1,0 @@
-# Section 3 : Les tranches
-
-Start typing here...

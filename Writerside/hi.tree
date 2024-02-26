@@ -42,8 +42,13 @@
         <toc-element topic="ch05s02-Section-2-Methodes.md"/>
         <toc-element topic="ch05s03-Section-3-Serialisation-des-structures.md"/>
     </toc-element>
-    <toc-element topic="Gestion-de-la-memoire.md">
-        <toc-element topic="ch05s03-Section-3-Les-tranches.md"/>
+    <toc-element topic="ch06-Gestion-de-la-memoire.md">
+        <toc-element topic="ch06s01-Section-1-La-pile.md"/>
+        <toc-element topic="ch06s02-Section-2-Le-tas.md"/>
+        <toc-element topic="ch06s03-Section-3-Le-vidangeur.md"/>
+        <toc-element topic="ch06s04-Section-4-Les-tranches.md">
+            <toc-element topic="ch06s04-Operations-sur-les-tranches.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Chapitre-7-Les-listes-chainees.md"/>
 </instance-profile>

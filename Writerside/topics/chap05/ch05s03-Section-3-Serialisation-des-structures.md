@@ -252,7 +252,7 @@ func section3c() {
 	}
 
 	// Ouvrir le fichier en mode écriture
-	file, err := os.OpenFile("people.json", os.O_CREATE|os.O_WRONLY, 0644)
+	file, err := os.OpenFile("people.json", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -1,0 +1,207 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-02-26T08:37:32.959131138"><title>Op&eacute;rations sur les tranches | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"trier-une-tranche","level":0,"title":"Trier une tranche","anchor":"#trier-une-tranche"},{"id":"filtrer-une-tranche","level":0,"title":"Filtrer une tranche","anchor":"#filtrer-une-tranche"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Op&eacute;rations sur les tranches | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="ch06s04-operations-sur-les-tranches.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Op&eacute;rations sur les tranches | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "ch06s04-operations-sur-les-tranches.html#webpage",
+    "url": "ch06s04-operations-sur-les-tranches.html",
+    "name": "Op&eacute;rations sur les tranches | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="ch06s04-Operations-sur-les-tranches" data-main-title="Op&eacute;rations sur les tranches" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="ch06-Gestion-de-la-memoire.md|Chapitre 6 : Gestion de la mémoire///ch06s04-Section-4-Les-tranches.md|Section 4 : Les tranches"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ch06s04-Operations-sur-les-tranches" id="ch06s04-Operations-sur-les-tranches.md">Op&eacute;rations sur les tranches</h1><p id="ee5ada74_4">Certaines op&eacute;rations sur les tranches peuvent &ecirc;tre faites <span class="control" id="ee5ada74_5">sur place</span> ou <span class="control" id="ee5ada74_6">en place</span> (<span class="emphasis" id="ee5ada74_7">in-place</span>), ce qui va modifier le contenu des tranches, ou sinon elles peuvent cr&eacute;er une nouvelle tranche sans toucher &agrave; l'originale.</p><section class="chapter"><h2 id="trier-une-tranche" data-toc="trier-une-tranche">Trier une tranche</h2><p id="ee5ada74_8">Le code suivant d&eacute;finit une fonction appel&eacute;e <code class="code" id="ee5ada74_9">section4a()</code>. Cette fonction effectue le tri de tranches de diff&eacute;rents types (entier, et struct) de diff&eacute;rentes fa&ccedil;ons. Ces op&eacute;rations sont faites <span class="emphasis" id="ee5ada74_10">sur place</span>, donc les tranches sont modifi&eacute;es.</p><div class="code-block" data-lang="go">
+func section4a() {
+	// trier une tranche de nombres entiers
+	numbers1 := []int{2, 5, 1, 7, 3, 8, 4, 7, 6, 4}
+	fmt.Println(numbers1)
+	fmt.Println(&quot;Trié ?&quot;, sort.IntsAreSorted(numbers1))
+
+	sort.Ints(numbers1)
+	fmt.Println(numbers1)
+	fmt.Println(&quot;Trié ?&quot;, sort.IntsAreSorted(numbers1))
+
+	numbers1 = []int{2, 5, 1, 7, 3, 8, 4, 7, 6, 4}
+	fmt.Println(numbers1)
+	fmt.Println(&quot;Trié ?&quot;, sort.IntsAreSorted(numbers1))
+	sort.Slice(numbers1, func(i, j int) bool {
+		return numbers1[i] &lt; numbers1[j]
+	})
+	fmt.Println(numbers1)
+	fmt.Println(&quot;Trié ?&quot;, sort.IntsAreSorted(numbers1))
+
+	numbers1 = []int{2, 5, 1, 7, 3, 8, 4, 7, 6, 4}
+	fmt.Println(numbers1)
+	fmt.Println(&quot;Trié ?&quot;, sort.IntsAreSorted(numbers1))
+	// trier en ordre décroissant
+	sort.Slice(numbers1, func(i, j int) bool {
+		return numbers1[i] &gt; numbers1[j]
+	})
+	fmt.Println(numbers1)
+	fmt.Println(&quot;Trié ?&quot;, sort.IntsAreSorted(numbers1))
+
+	// trier une tranche de struct Person
+	people := []Person{
+		{Name: &quot;John&quot;, Age: 30},
+		{Name: &quot;Jane&quot;, Age: 25},
+		{Name: &quot;Alice&quot;, Age: 35},
+	}
+	fmt.Println(people)
+	// trier par âge croissant
+	sort.Slice(people, func(i, j int) bool {
+		return people[i].Age &lt; people[j].Age
+	})
+	fmt.Println(people)
+	// trier par âge décroissant
+	sort.Slice(people, func(i, j int) bool {
+		return people[i].Age &gt; people[j].Age
+	})
+	fmt.Println(people)
+
+	// trier par nom croissant
+	sort.Slice(people, personNameCompare(people))
+	fmt.Println(people)
+	// trier par nom décroissant
+	sort.Slice(people, personNameCompareReverse(people))
+	fmt.Println(people)
+
+}
+
+func personNameCompareReverse(people []Person) func(i int, j int) bool {
+	return func(i, j int) bool {
+		return people[i].Name &gt; people[j].Name
+	}
+}
+
+func personNameCompare(people []Person) func(i int, j int) bool {
+	return func(i, j int) bool {
+		return people[i].Name &lt; people[j].Name
+	}
+}
+</div><ol class="list _decimal" id="ee5ada74_12" type="1"><li class="list__item" id="ee5ada74_13"><p id="ee5ada74_14"><span class="control" id="ee5ada74_15">Tri d'une tranche d'entiers</span>: D'abord, elle cr&eacute;&eacute; une tranche d'entiers appel&eacute;e <code class="code" id="ee5ada74_16">numbers1</code>, affiche la tranche, v&eacute;rifie si elle est tri&eacute;e (en utilisant <code class="code" id="ee5ada74_17">sort.IntsAreSorted()</code>) et affiche le r&eacute;sultat. Elle trie ensuite la tranche en utilisant <code class="code" id="ee5ada74_18">sort.Ints()</code>, affiche de nouveau la tranche et v&eacute;rifie si elle est tri&eacute;e. Ce processus est r&eacute;p&eacute;t&eacute; deux fois, la seconde fois en triant la tranche dans l'ordre d&eacute;croissant avec une fonction lambda et <code class="code" id="ee5ada74_19">sort.Slice()</code>.</p></li><li class="list__item" id="ee5ada74_20"><p id="ee5ada74_21"><span class="control" id="ee5ada74_22">Tri d'une tranche de structs</span>: Ensuite, une tranche de structs <code class="code" id="ee5ada74_23">Person</code> est cr&eacute;&eacute;e. Chaque <code class="code" id="ee5ada74_24">Person</code> a un nom et un &acirc;ge. Elle affiche la tranche de personnes, la trie par &acirc;ge en ordre croissant, l'affiche &agrave; nouveau, la trie par &acirc;ge en ordre d&eacute;croissant, et l'affiche une fois de plus. Elle trie ensuite la tranche de personnes par nom en ordre croissant, l'affiche, la trie par nom en ordre d&eacute;croissant, et l'affiche une derni&egrave;re fois.</p></li></ol><p id="ee5ada74_25">Les deux fonctions <code class="code" id="ee5ada74_26">personNameCompare()</code> et <code class="code" id="ee5ada74_27">personNameCompareReverse()</code> sont utilis&eacute;es pour g&eacute;n&eacute;rer des fonctions de comparaison pour le tri de slices. La premi&egrave;re fonction retourne une fonction qui compare deux personnes en fonction de leur nom dans l'ordre croissant, tandis que la seconde fonction retourne une fonction de comparaison qui compare deux personnes en fonction de leur nom dans l'ordre d&eacute;croissant.</p><section class="chapter"><h3 id="fonctions-citoyennes-de-premi-re-classe" data-toc="fonctions-citoyennes-de-premi-re-classe">Fonctions : citoyennes de premi&egrave;re classe</h3><p id="ee5ada74_28">En programmation, lorsque nous parlons de <span class="control" id="ee5ada74_29">citoyennet&eacute; de premi&egrave;re classe</span>, nous faisons r&eacute;f&eacute;rence &agrave; des entit&eacute;s qui peuvent &ecirc;tre manipul&eacute;es de toutes les fa&ccedil;ons dont les autres entit&eacute;s peuvent l'&ecirc;tre. Si nous disons que les fonctions sont des <span class="emphasis" id="ee5ada74_30">citoyennes de premi&egrave;re classe</span> dans un langage de programmation comme Go, cela signifie que les fonctions peuvent &ecirc;tre utilis&eacute;es comme n'importe quel autre type de donn&eacute;es.</p><p id="ee5ada74_31">En Go, les fonctions sont des citoyens de premi&egrave;re classe, car elles peuvent &ecirc;tre utilis&eacute;es de mani&egrave;re interchangeable avec les autres types de donn&eacute;es. Elles peuvent &ecirc;tre affect&eacute;es &agrave; des variables, pass&eacute;es en param&egrave;tre &agrave; d'autres fonctions, retourn&eacute;es par d'autres fonctions, d&eacute;clar&eacute;es dans une fonction et m&ecirc;me faire partie de structures de donn&eacute;es comme les tranches ou les maps.</p><p id="ee5ada74_32">Dans le code pr&eacute;c&eacute;dent, nous voyons des exemples de cela. Par exemple, les deux fonctions <code class="code" id="ee5ada74_33">personNameCompare()</code> et <code class="code" id="ee5ada74_34">personNameCompareReverse()</code> retournent des fonctions. Ces fonctions retourn&eacute;es sont ensuite utilis&eacute;es comme arguments pour la fonction <code class="code" id="ee5ada74_35">sort.Slice()</code>. C'est un exemple de traitement des fonctions comme des citoyens de premi&egrave;re classe : dans ce cas, des fonctions sont retourn&eacute;es par d'autres fonctions et pass&eacute;es &agrave; d'autres fonctions. C'est une caract&eacute;ristique puissante de Go que l'on retrouve dans d'autres langages fonctionnels.</p><section class="chapter"><h4 id="fonctions-lambda" data-toc="fonctions-lambda">Fonctions lambda</h4><p id="ee5ada74_36">Les fonctions lambda (aussi connues sous le nom de fonctions anonymes) en Go sont des fonctions qui ne sont d&eacute;finies avec aucun nom et peuvent &ecirc;tre utilis&eacute;es pour cr&eacute;er des d&eacute;finitions de fonctions en ligne. Il s'agit de d&eacute;finir une fonction juste o&ugrave; vous en avez besoin. En d'autres termes, une fonction lambda est une fonction d&eacute;clar&eacute;e sans nom associ&eacute;.</p><p id="ee5ada74_37">Les fonctions lambda sont tr&egrave;s utiles pour r&eacute;aliser des op&eacute;rations simples et cela &eacute;vite &eacute;galement d'encombrer le code avec de multiples petites fonctions. Elles sont souvent utilis&eacute;es comme arguments pour des fonctions qui prennent des fonctions en param&egrave;tre.</p><p id="ee5ada74_38">Reprenons le code que nous avons discut&eacute; pr&eacute;c&eacute;demment pour illustrer cela. Par exemple, lorsque nous trions la tranche d'entiers <code class="code" id="ee5ada74_39">numbers1</code> ou la tranche <code class="code" id="ee5ada74_40">people</code> de structures <code class="code" id="ee5ada74_41">Person</code>, nous utilisons des fonctions lambda. Voici l'extrait de code correspondant :</p><div class="code-block" data-lang="go">
+sort.Slice(numbers1, func(i, j int) bool {
+	return numbers1[i] &lt; numbers1[j]
+})
+
+sort.Slice(people, func(i, j int) bool {
+	return people[i].Age &lt; people[j].Age
+})
+</div><p id="ee5ada74_43">Dans chacun de ces appels &agrave; <code class="code" id="ee5ada74_44">sort.Slice()</code>, le deuxi&egrave;me argument est une fonction lambda qui est utilis&eacute;e pour d&eacute;terminer l'ordre de tri. Ces fonctions sont d&eacute;finies sur place, et elles n'ont pas de nom. Ce sont des fonctions lambda.</p></section></section></section><section class="chapter"><h2 id="filtrer-une-tranche" data-toc="filtrer-une-tranche">Filtrer une tranche</h2><p id="ee5ada74_45">Le code suivant fourni illustre plusieurs op&eacute;rations de filtrage sur une tranche de structures <code class="code" id="ee5ada74_46">Person</code>. Le but est de d&eacute;montrer diff&eacute;rentes mani&egrave;res de filtrer les donn&eacute;es dans un tableau de <code class="code" id="ee5ada74_47">Person</code> selon diff&eacute;rentes conditions, notamment l'&acirc;ge et les caract&eacute;ristiques du nom.</p><div class="code-block" data-lang="go">
+func section4b() {
+	people := []Person{
+		{Name: &quot;John&quot;, Age: 30},
+		{Name: &quot;Jane&quot;, Age: 25},
+		{Name: &quot;Alice&quot;, Age: 35},
+	}
+	fmt.Println(people)
+
+	// filtrer une tranche de struct Person
+	// filtre : plus de 30 ans
+	filteredPeople := make([]Person, 0)
+	for _, person := range people {
+		if person.Age &gt; 30 {
+			filteredPeople = append(filteredPeople, person)
+		}
+	}
+	fmt.Println(filteredPeople)
+
+	// filtrer une tranche de struct Person
+	// filtre : nom commençant par &quot;J&quot;
+	filteredPeople = make([]Person, 0)
+	for _, person := range people {
+		if person.Name[0] == 'J' {
+			filteredPeople = append(filteredPeople, person)
+		}
+	}
+	fmt.Println(filteredPeople)
+
+	// filtrer une tranche de struct Person
+	// filtre : nom contenant plus de 5 caractères
+	filteredPeople = make([]Person, 0)
+	for _, person := range people {
+		if len(person.Name) &gt; 5 {
+			filteredPeople = append(filteredPeople, person)
+		}
+	}
+	fmt.Println(filteredPeople)
+}
+</div><p id="ee5ada74_49">Tout d'abord, une structure <code class="code" id="ee5ada74_50">Person</code> est d&eacute;clar&eacute;e avant la fonction principale :</p><div class="code-block" data-lang="go">
+type Person struct {
+	Name string
+	Age  int
+}
+</div><p id="ee5ada74_52">Cette structure repr&eacute;sente une personne avec un nom (type <code class="code" id="ee5ada74_53">string</code>) et un &acirc;ge (type <code class="code" id="ee5ada74_54">int</code>).</p><p id="ee5ada74_55">La fonction <code class="code" id="ee5ada74_56">section4b</code> cr&eacute;e d'abord un tableau de <code class="code" id="ee5ada74_57">Person</code> nomm&eacute; <code class="code" id="ee5ada74_58">people</code>:</p><div class="code-block" data-lang="go">
+people := []Person{
+		{Name: &quot;John&quot;, Age: 30},
+		{Name: &quot;Jane&quot;, Age: 25},
+		{Name: &quot;Alice&quot;, Age: 35},
+}
+</div><p id="ee5ada74_60">Ensuite, il y a plusieurs sections de code qui filtrent ce tableau <code class="code" id="ee5ada74_61">people</code> en fonction de diff&eacute;rentes conditions et impriment le r&eacute;sultat.</p><p id="ee5ada74_62">Voici le premier filtre :</p><div class="code-block" data-lang="go">
+filteredPeople := make([]Person, 0)
+for _, person := range people {
+	if person.Age &gt; 30 {
+		filteredPeople = append(filteredPeople, person)
+	}
+}
+fmt.Println(filteredPeople)
+</div><p id="ee5ada74_64">Cette section filtre toutes les personnes qui ont plus de 30 ans. Le tableau <code class="code" id="ee5ada74_65">filteredPeople</code> est initialement vide. Pour chaque <code class="code" id="ee5ada74_66">Person</code> dans le tableau <code class="code" id="ee5ada74_67">people</code>, si l' <code class="code" id="ee5ada74_68">Age</code> est sup&eacute;rieur &agrave; 30, cette <code class="code" id="ee5ada74_69">Person</code> est ajout&eacute;e au tableau <code class="code" id="ee5ada74_70">filteredPeople</code>. Le r&eacute;sultat est ensuite imprim&eacute;.</p><p id="ee5ada74_71">Les deux sections suivantes suivent la m&ecirc;me proc&eacute;dure, mais avec diff&eacute;rentes conditions :</p><ul class="list _ul" id="ee5ada74_72"><li class="list__item" id="ee5ada74_73"><p>La deuxi&egrave;me section de filtrage ajoute &agrave; <code class="code" id="ee5ada74_74">filteredPeople</code> toutes les <code class="code" id="ee5ada74_75">Person</code> dont le nom commence par la lettre 'J'.</p></li><li class="list__item" id="ee5ada74_76"><p>La troisi&egrave;me section de filtrage ajoute les personnes dont le nom comporte plus de 5 caract&egrave;res.</p></li></ul><section class="chapter"><h3 id="version-am-lior-e" data-toc="version-am-lior-e">Version am&eacute;lior&eacute;e</h3><p id="ee5ada74_77">En examinant le code pr&eacute;c&eacute;dent, il y a un patron r&eacute;p&eacute;t&eacute; de cr&eacute;ation d'une liste filtr&eacute;e de personnes en fonction de diff&eacute;rentes conditions. C'est une bonne occasion d'appliquer la refonte <span class="control" id="ee5ada74_78">Extraire la fonction</span>. En extrayant la logique r&eacute;p&eacute;t&eacute;e dans une fonction distincte qui prend une fonction de filtrage comme l'un de ses param&egrave;tres, vous pouvez &eacute;liminer la r&eacute;p&eacute;tition du code tout en rendant le code plus facile &agrave; comprendre et &agrave; modifier.</p><p id="ee5ada74_79">Le code qui suit est une r&eacute;&eacute;criture de l'exemple pr&eacute;c&eacute;dent qui r&eacute;duit la r&eacute;p&eacute;tition.</p><div class="code-block" data-lang="go">
+func section4c() {
+    people := []Person{
+        {Name: &quot;John&quot;, Age: 30},
+        {Name: &quot;Jane&quot;, Age: 25},
+        {Name: &quot;Alice&quot;, Age: 35},
+    }
+    fmt.Println(people)
+
+    filteredPeople := filterPeople(people, func(person Person) bool {
+        return person.Age &gt; 30
+    })
+    fmt.Println(filteredPeople)
+
+    filteredPeople = filterPeople(people, func(person Person) bool {
+        return person.Name[0] == 'J'
+    })
+    fmt.Println(filteredPeople)
+
+    filteredPeople = filterPeople(people, func(person Person) bool {
+        return len(person.Name) &gt; 5
+    })
+    fmt.Println(filteredPeople)
+}
+
+type FilterFunc func(person Person) bool
+
+func filterPeople(people []Person, filter FilterFunc) []Person {
+    filteredPeople := make([]Person, 0)
+    for _, person := range people {
+        if filter(person) {
+            filteredPeople = append(filteredPeople, person)
+        }
+    }
+    return filteredPeople
+}
+</div><p id="ee5ada74_81"><code class="code" id="ee5ada74_82">FilterFunc</code> est un nouveau type pour une fonction qui prend une <code class="code" id="ee5ada74_83">Person</code> et renvoie un <code class="code" id="ee5ada74_84">bool</code>, d&eacute;finissant si cette personne doit &ecirc;tre incluse dans les r&eacute;sultats filtr&eacute;s.</p><p id="ee5ada74_85">Donc, dans chacun des appels &agrave; <code class="code" id="ee5ada74_86">filterPeople</code>, une nouvelle fonction anonyme est cr&eacute;&eacute;e qui sp&eacute;cifie la logique de filtrage pour cette liste particuli&egrave;re.</p><p id="ee5ada74_87">Cette refactorisation &eacute;limine la redondance dans votre code, et rend &eacute;galement le code plus facile &agrave; comprendre : au lieu de devoir lire les sp&eacute;cificit&eacute;s de chaque boucle pour comprendre ce qui se passe, vous pouvez maintenant voir facilement que chaque s&eacute;quence filtre la liste <code class="code" id="ee5ada74_88">people</code> selon un crit&egrave;re distinct. De plus, si vous souhaitez ajouter une nouvelle condition pour filtrer les personnes, vous avez simplement besoin d'ajouter un nouvel appel &agrave; <code class="code" id="ee5ada74_89">filterPeople</code> avec la fonction de filtrage appropri&eacute;e.</p></section><section class="chapter"><h3 id="autre-am-lioration" data-toc="autre-am-lioration">Autre am&eacute;lioration</h3><p id="ee5ada74_90">Si d&eacute;sir&eacute;, &agrave; la place d'utiliser des fonctions de filtrage anonymes, les fonctions de filtrage pourraient &ecirc;tre d&eacute;finies un peu &agrave; la mani&egrave;re de la fonction <code class="code" id="ee5ada74_91">personNameCompareReverse</code> de l'exemple de tri pr&eacute;c&eacute;dent.</p><div class="code-block" data-lang="go">
+func section4d() {
+	people := []Person{
+		{Name: &quot;John&quot;, Age: 30},
+		{Name: &quot;Jane&quot;, Age: 25},
+		{Name: &quot;Alice&quot;, Age: 35},
+	}
+	fmt.Println(people)
+
+	filteredPeople := filterPeople(people, peopleFilterMinAge(31))
+	fmt.Println(filteredPeople)
+
+}
+
+func peopleFilterMinAge(minAge int) FilterFunc {
+	return func(person Person) bool {
+		return person.Age &gt;= minAge
+	}
+}
+</div><p id="ee5ada74_93">Ce code poursuit la tendance de refactorisation et d'am&eacute;lioration de la lisibilit&eacute; en utilisant le filtrage des personnes.</p><p id="ee5ada74_94">Commen&ccedil;ons par examiner la nouvelle fonction <code class="code" id="ee5ada74_95">peopleFilterMinAge</code>.</p><p id="ee5ada74_96">Elle d&eacute;finit une fonction <code class="code" id="ee5ada74_97">peopleFilterMinAge</code> qui prend un &acirc;ge minimum <code class="code" id="ee5ada74_98">minAge</code> comme argument et renvoie une fonction de type <code class="code" id="ee5ada74_99">FilterFunc</code> qui, &agrave; son tour, accepte une personne et renvoie si l'&acirc;ge de cette personne est sup&eacute;rieur ou &eacute;gal &agrave; <code class="code" id="ee5ada74_100">minAge</code>.</p><p id="ee5ada74_101">Nous pouvons voir le rendement de cette fonction utilis&eacute;e dans un filtre dans la fonction <code class="code" id="ee5ada74_102">section4d</code>:</p><div class="code-block" data-lang="go">
+filteredPeople := filterPeople(people, peopleFilterMinAge(31))
+</div><p id="ee5ada74_104">Ici, <code class="code" id="ee5ada74_105">peopleFilterMinAge(31)</code> renvoie une fonction qui sera utilis&eacute;e comme crit&egrave;re de filtre par <code class="code" id="ee5ada74_106">filterPeople</code>. Elle v&eacute;rifiera si l'&acirc;ge de chaque personne dans le tableau <code class="code" id="ee5ada74_107">people</code> est sup&eacute;rieur ou &eacute;gale &agrave; 31. Si c'est le cas, cette personne sera incluse dans la liste <code class="code" id="ee5ada74_108">filteredPeople</code>.</p><p id="ee5ada74_109">En r&eacute;sum&eacute;, <code class="code" id="ee5ada74_110">section4d</code> utilise une nouvelle fonction <code class="code" id="ee5ada74_111">peopleFilterMinAge</code> pour cr&eacute;er une fonction de filtre dynamique bas&eacute;e sur un &acirc;ge minimum, puis utilise cette fonction de filtre pour obtenir une liste de personnes dont l'&acirc;ge est sup&eacute;rieur ou &eacute;gal &agrave; l'&acirc;ge minimum. Ceci donne encore plus de flexibilit&eacute; au code, car on peut maintenant facilement cr&eacute;er diff&eacute;rents filtres d'&acirc;ge en appelant simplement <code class="code" id="ee5ada74_112">peopleFilterMinAge</code> avec l'&acirc;ge minimum souhait&eacute; en param&egrave;tre. On pourrait poursuivre avec des d&eacute;finitions similaires pour d'autres crit&egrave;res.</p></section></section><div class="last-modified">Last modified: 26 février 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ch06s04-section-4-les-tranches.html" class="navigation-links__prev">Section 4 : Les tranches</a><a href="chapitre-7-les-listes-chainees.html" class="navigation-links__next">Chapitre 7 : Les listes cha&icirc;n&eacute;es</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>
