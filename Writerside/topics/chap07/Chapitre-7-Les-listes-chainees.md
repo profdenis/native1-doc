@@ -1,3 +1,0 @@
-# Chapitre 7 : Les listes chaînées
-
-Start typing here...
