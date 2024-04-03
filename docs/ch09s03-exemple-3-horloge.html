@@ -1,0 +1,44 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-03T16:56:02.429713062"><title>Exemple 3 : Horloge | Help Instance</title><script type="application/json" id="virtual-toc-data">[]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b224/app.css" rel="stylesheet"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Exemple 3 : Horloge | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/ch09s03-exemple-3-horloge.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Exemple 3 : Horloge | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/ch09s03-exemple-3-horloge.html#webpage",
+    "url": "writerside-documentation/ch09s03-exemple-3-horloge.html",
+    "name": "Exemple 3 : Horloge | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="ch09s03-Exemple-3-Horloge" data-main-title="Exemple 3 : Horloge" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="ch09-Chapitre-9-Interfaces-graphiques.md|Chapitre 9 : Interfaces graphiques"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ch09s03-Exemple-3-Horloge" id="ch09s03-Exemple-3-Horloge.md">Exemple 3 : Horloge</h1><p id="gnz5ij_138"><a href="https://github.com/profdenis/native1/tree/master/chap9/03_horloge" id="gnz5ij_139" data-external="true" rel="noopener noreferrer">Code</a></p><p id="gnz5ij_140">Cet exemple est une application Go qui affiche l'heure actuelle dans une fen&ecirc;tre. L'heure est mise &agrave; jour chaque seconde.</p><p id="gnz5ij_141">Voici une br&egrave;ve explication de chaque partie :</p><div class="code-block" data-lang="go">
+package main
+import (
+	&quot;fyne.io/fyne/v2/app&quot;
+	&quot;fyne.io/fyne/v2/widget&quot;
+	&quot;time&quot;
+)
+</div><p id="gnz5ij_143">Ceci d&eacute;finit le package <code class="code" id="gnz5ij_144">main</code> et importe les biblioth&egrave;ques n&eacute;cessaires : <code class="code" id="gnz5ij_145">fyne.io/fyne/v2/app</code> pour cr&eacute;er l'application, <code class="code" id="gnz5ij_146">fyne.io/fyne/v2/widget</code> pour les widgets de l'interface utilisateur, et <code class="code" id="gnz5ij_147">time</code> pour obtenir et formater l'heure actuelle.</p><div class="code-block" data-lang="go">
+func main() {
+	a := app.New()
+	w := a.NewWindow(&quot;Clock&quot;)
+	clock := widget.NewLabel(&quot;&quot;)
+	updateTimeLabel(clock)
+	w.SetContent(clock)
+</div><p id="gnz5ij_149">Dans la fonction <code class="code" id="gnz5ij_150">main</code>, une nouvelle application Fyne est instanci&eacute;e avec <code class="code" id="gnz5ij_151">app.New()</code>. Ensuite, une fen&ecirc;tre intitul&eacute;e <span class="emphasis" id="gnz5ij_152">&quot;Clock&quot;</span> est cr&eacute;&eacute;e avec <code class="code" id="gnz5ij_153">a.NewWindow(&quot;Clock&quot;)</code>. Un <code class="code" id="gnz5ij_154">widget</code> de type <code class="code" id="gnz5ij_155">Label</code>, qui affichera l'heure actuelle, est cr&eacute;&eacute; avec <code class="code" id="gnz5ij_156">widget.NewLabel(&quot;&quot;)</code> et son texte est d&eacute;fini avec la fonction <code class="code" id="gnz5ij_157">updateTimeLabel(clock)</code>. Ce label est ensuite d&eacute;fini comme le contenu de la fen&ecirc;tre.</p><div class="code-block" data-lang="go">
+	go func() {
+		for range time.Tick(time.Second) {
+			updateTimeLabel(clock)
+		}
+	}()
+</div><p id="gnz5ij_159">Ceci est une goroutine, qui s'ex&eacute;cute simultan&eacute;ment avec la fonction principale. Elle utilise une boucle <code class="code" id="gnz5ij_160">for ... range</code> pour attendre chaque <code class="code" id="gnz5ij_161">tick</code> (chaque seconde) de <code class="code" id="gnz5ij_162">time.Tick(time.Second)</code>. Chaque fois qu'elle re&ccedil;oit un <code class="code" id="gnz5ij_163">tick</code>, elle met &agrave; jour le texte de l'&eacute;tiquette avec l'heure actuelle en utilisant la fonction <code class="code" id="gnz5ij_164">updateTimeLabel(clock)</code>.</p><div class="code-block" data-lang="go">
+	w.ShowAndRun()
+}
+</div><p id="gnz5ij_166"><code class="code" id="gnz5ij_167">w.ShowAndRun()</code> affiche la fen&ecirc;tre et ex&eacute;cute la boucle d'&eacute;v&eacute;nements de l'application. Cela permet &agrave; l'application de rester en cours d'ex&eacute;cution jusqu'&agrave; ce que la fen&ecirc;tre soit ferm&eacute;e par l'utilisateur.</p><div class="code-block" data-lang="go">
+func updateTimeLabel(clock *widget.Label) {
+	formatted := time.Now().Format(&quot;L'heure est 03:04:05&quot;)
+	clock.SetText(formatted)
+}
+</div><p id="gnz5ij_169">Dans la fonction <code class="code" id="gnz5ij_170">updateTimeLabel</code>, l'heure actuelle est r&eacute;cup&eacute;r&eacute;e avec <code class="code" id="gnz5ij_171">time.Now()</code>, puis format&eacute;e en une cha&icirc;ne <span class="emphasis" id="gnz5ij_172">&quot;L'heure est 03:04:05&quot;</span> avec <code class="code" id="gnz5ij_173">Format(&quot;L'heure est 03:04:05&quot;)</code>. La cha&icirc;ne format&eacute;e est ensuite d&eacute;finie comme texte pour l'&eacute;tiquette <code class="code" id="gnz5ij_174">clock</code> avec <code class="code" id="gnz5ij_175">clock.SetText(formatted)</code>.</p><div class="last-modified">Last modified: 03 avril 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ch09s02-exemple-2-fenetres.html" class="navigation-links__prev">Exemple 2 : Fen&ecirc;tres</a><a href="ch09s04-exemple-4-entree-de-texte.html" class="navigation-links__next">Exemple 4 : Entr&eacute;e de texte</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b224/app.js"></script></body></html>

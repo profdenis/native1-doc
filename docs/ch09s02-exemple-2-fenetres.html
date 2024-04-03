@@ -1,0 +1,45 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-03T16:56:02.411645253"><title>Exemple 2 : Fen&ecirc;tres | Help Instance</title><script type="application/json" id="virtual-toc-data">[]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b224/app.css" rel="stylesheet"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Exemple 2 : Fen&ecirc;tres | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/ch09s02-exemple-2-fenetres.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Exemple 2 : Fen&ecirc;tres | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/ch09s02-exemple-2-fenetres.html#webpage",
+    "url": "writerside-documentation/ch09s02-exemple-2-fenetres.html",
+    "name": "Exemple 2 : Fen&ecirc;tres | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="ch09s02-Exemple-2-Fenetres" data-main-title="Exemple 2 : Fenêtres" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="ch09-Chapitre-9-Interfaces-graphiques.md|Chapitre 9 : Interfaces graphiques"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ch09s02-Exemple-2-Fenetres" id="ch09s02-Exemple-2-Fenetres.md">Exemple 2 : Fenêtres</h1><p id="-dd4aw2_51"><a href="https://github.com/profdenis/native1/tree/master/chap9/02_fenetres" id="-dd4aw2_52" data-external="true" rel="noopener noreferrer">Code</a></p><p id="-dd4aw2_53">Explications bloc par bloc :</p><div class="code-block" data-lang="go">
+package main
+import (
+	&quot;fyne.io/fyne/v2&quot;
+	&quot;fyne.io/fyne/v2/app&quot;
+	&quot;fyne.io/fyne/v2/widget&quot;
+)
+</div><p id="-dd4aw2_55">Ici, nous avons la d&eacute;claration du package principal, et il importe les packages Fyne n&eacute;cessaires pour cr&eacute;er une application GUI.</p><div class="code-block" data-lang="go">
+func main() {
+	a := app.New()
+</div><p id="-dd4aw2_57">La fonction <code class="code" id="-dd4aw2_58">main</code> est le point d'entr&eacute;e du programme Go. <code class="code" id="-dd4aw2_59">app.New()</code> cr&eacute;e une nouvelle application Fyne.</p><div class="code-block" data-lang="go">
+	w := a.NewWindow(&quot;Allo&quot;)
+	w.SetContent(widget.NewLabel(&quot;Allo&quot;))
+	w.SetMaster()
+	w.Show()
+</div><p id="-dd4aw2_61">Une fen&ecirc;tre intitul&eacute;e <span class="emphasis" id="-dd4aw2_62">&quot;Allo&quot;</span> est cr&eacute;&eacute;e, avec une &eacute;tiquette qui dit aussi <span class="emphasis" id="-dd4aw2_63">&quot;Allo&quot;</span>. <code class="code" id="-dd4aw2_64">setMaster()</code> indique que si cette fen&ecirc;tre est ferm&eacute;e, l'application enti&egrave;re doit se fermer. <code class="code" id="-dd4aw2_65">Show()</code> rend la fen&ecirc;tre visible.</p><div class="code-block" data-lang="go">
+	w2 := a.NewWindow(&quot;Plus grande&quot;)
+	button := widget.NewButton(&quot;Ouvrir&quot;, func() {
+		w3 := a.NewWindow(&quot;Trois&quot;)
+		w3.SetContent(widget.NewLabel(&quot;Trois&quot;))
+		w3.Resize(fyne.NewSize(100, 100))
+		w3.Show()
+	})
+	w2.SetContent(button)
+	w2.Resize(fyne.NewSize(200, 200))
+	w2.Show()
+</div><p id="-dd4aw2_67">Ce bloc cr&eacute;e une autre fen&ecirc;tre intitul&eacute;e <span class="emphasis" id="-dd4aw2_68">&quot;Plus grande&quot;</span>, et la fen&ecirc;tre contient un bouton disant <span class="emphasis" id="-dd4aw2_69">&quot;Ouvrir&quot;</span>. Lorsqu'on clique dessus, le bouton ouvre une troisi&egrave;me fen&ecirc;tre intitul&eacute;e <span class="emphasis" id="-dd4aw2_70">&quot;Trois&quot;</span>. La taille des fen&ecirc;tres est &eacute;galement d&eacute;finie ici.</p><div class="code-block" data-lang="go">
+	a.Run()
+}
+</div><p id="-dd4aw2_72">Enfin, <code class="code" id="-dd4aw2_73">a.Run()</code> ex&eacute;cute la boucle d'&eacute;v&eacute;nement de l'application Fyne qui se poursuivrait jusqu'&agrave; ce que toutes les fen&ecirc;tres soient ferm&eacute;es ou que la fonction <code class="code" id="-dd4aw2_74">Quit()</code> soit appel&eacute;e.</p><div class="last-modified">Last modified: 03 avril 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ch09s01-exemple-1-allo.html" class="navigation-links__prev">Exemple 1 : Allo</a><a href="ch09s03-exemple-3-horloge.html" class="navigation-links__next">Exemple 3 : Horloge</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b224/app.js"></script></body></html>

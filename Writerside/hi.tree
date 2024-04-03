@@ -60,4 +60,14 @@
         <toc-element topic="ch08s03-Section-3-Canaux.md"/>
         <toc-element topic="ch08s04-Section-4-WaitGroup.md"/>
     </toc-element>
+    <toc-element topic="ch09-Chapitre-9-Interfaces-graphiques.md">
+        <toc-element topic="ch09s01-Exemple-1-Allo.md"/>
+        <toc-element topic="ch09s02-Exemple-2-Fenetres.md"/>
+        <toc-element topic="ch09s03-Exemple-3-Horloge.md"/>
+        <toc-element topic="ch09s04-Exemple-4-Entree-de-texte.md"/>
+        <toc-element topic="ch09s05-Exemple-5-Contenants.md"/>
+        <toc-element topic="ch09s06-Exemple-6-Fichiers.md"/>
+        <toc-element topic="ch09s07-Exemple-7-Menu.md"/>
+        <toc-element topic="ch09s08-Exemple-8-Listes.md"/>
+    </toc-element>
 </instance-profile>
