@@ -1,0 +1,137 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-04-29T10:29:26.542481534"><title>Exemple 10: MP3 avec pause | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"gettagsbuttonfunc","level":0,"title":"getTagsButtonFunc","anchor":"#gettagsbuttonfunc"},{"id":"getopenbuttonfunc","level":0,"title":"getOpenButtonFunc","anchor":"#getopenbuttonfunc"},{"id":"createactionbutton","level":0,"title":"createActionButton","anchor":"#createactionbutton"},{"id":"getopenfiledialogfunc","level":0,"title":"getOpenFileDialogFunc","anchor":"#getopenfiledialogfunc"},{"id":"playsong","level":0,"title":"playSong","anchor":"#playsong"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b224/app.css" rel="stylesheet"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Exemple 10: MP3 avec pause | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/ch09s10-exemple-10-mp3-avec-pause.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Exemple 10: MP3 avec pause | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/ch09s10-exemple-10-mp3-avec-pause.html#webpage",
+    "url": "writerside-documentation/ch09s10-exemple-10-mp3-avec-pause.html",
+    "name": "Exemple 10: MP3 avec pause | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="ch09s10-Exemple-10-MP3-avec-pause" data-main-title="Exemple 10: MP3 avec pause" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="ch09-Chapitre-9-Interfaces-graphiques.md|Chapitre 9 : Interfaces graphiques"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ch09s10-Exemple-10-MP3-avec-pause" id="ch09s10-Exemple-10-MP3-avec-pause.md">Exemple 10: MP3 avec pause</h1><p id="-pmsznu_196"><a href="https://github.com/profdenis/native1/tree/master/chap9/10_mp3_pause" id="-pmsznu_197" data-external="true" rel="noopener noreferrer">Code</a></p><p id="-pmsznu_198">Ce programme Go est une application de lecteur MP3 &eacute;crite en utilisant la bo&icirc;te &agrave; outils GUI Fyne. Voici un d&eacute;tail des principales fonctions.</p><p id="-pmsznu_199">Dans la fonction principale, nous avons ces &eacute;tapes principales :</p><ol class="list _decimal" id="-pmsznu_200" type="1"><li class="list__item" id="-pmsznu_201"><p>Une nouvelle application et une nouvelle fen&ecirc;tre sont cr&eacute;&eacute;es.</p></li><li class="list__item" id="-pmsznu_202"><p>Il initialise ensuite un canal <code class="code" id="-pmsznu_203">playerActionChannel</code> qui sera utilis&eacute; pour la communication entre les composants de l'interface et la fonction de lecture.</p></li><li class="list__item" id="-pmsznu_204"><p>Divers composants de l'interface sont cr&eacute;&eacute;s, tels que des boutons pour lire, mettre en pause, arr&ecirc;ter et d'autres commandes, qui envoient des commandes via <code class="code" id="-pmsznu_205">playerActionChannel</code>.</p></li><li class="list__item" id="-pmsznu_206"><p>Cette configuration permet &agrave; l'interface de fonctionner dans le thread principal tout en jouant des fichiers MP3 dans une autre goroutine.</p></li><li class="list__item" id="-pmsznu_207"><p>Lorsqu'une chanson est s&eacute;lectionn&eacute;e pour &ecirc;tre jou&eacute;e, la goroutine correspondante re&ccedil;oit l'URI du fichier et commence &agrave; la jouer. Les op&eacute;rations comme jouer, mettre en pause ou arr&ecirc;ter la chanson sont faites en envoyant les commandes correspondantes via le canal <code class="code" id="-pmsznu_208">playerActionChannel</code>.</p></li></ol><p id="-pmsznu_209">Passons en revue chaque partie du code :</p><ul class="list _bullet" id="-pmsznu_210"><li class="list__item" id="-pmsznu_211"><p id="-pmsznu_212">Tout d'abord, le type <code class="code" id="-pmsznu_213">PlayerAction</code> et ses valeurs possibles sont d&eacute;finis, ainsi que le canal <code class="code" id="-pmsznu_214">playerActionChannel</code> qui sera utilis&eacute; pour communiquer ces actions entre la fonction principale et la goroutine de lecture.</p></li><li class="list__item" id="-pmsznu_215"><p id="-pmsznu_216"><code class="code" id="-pmsznu_217">getOpenButtonFunc</code> est une fonction qui renvoie une nouvelle fonction qui ouvrira une bo&icirc;te de dialogue pour choisir un fichier MP3 dans le syst&egrave;me de fichiers, puis appellera la routine <code class="code" id="-pmsznu_218">playSong</code> pour jouer la chanson s&eacute;lectionn&eacute;e. Pendant ce processus, toute chanson pr&eacute;c&eacute;demment en cours de lecture est arr&ecirc;t&eacute;e (via le <code class="code" id="-pmsznu_219">KillAction</code>).</p></li><li class="list__item" id="-pmsznu_220"><p id="-pmsznu_221"><code class="code" id="-pmsznu_222">createActionButton</code> et <code class="code" id="-pmsznu_223">createActionButtonWithIcon</code> sont des fonctions qui renvoient des boutons qui envoient une <code class="code" id="-pmsznu_224">PlayerAction</code> sp&eacute;cifi&eacute;e au <code class="code" id="-pmsznu_225">playerActionChannel</code> lorsqu'ils sont cliqu&eacute;s.</p></li><li class="list__item" id="-pmsznu_226"><p id="-pmsznu_227"><code class="code" id="-pmsznu_228">playSong</code> est une fonction qui renvoie une fonction de goroutine qui joue la chanson s&eacute;lectionn&eacute;e. Elle re&ccedil;oit des commandes via <code class="code" id="-pmsznu_229">playerActionChannel</code> pour contr&ocirc;ler la lecture de la chanson (lecture, pause, etc.). Elle utilise la biblioth&egrave;que beep pour contr&ocirc;ler la lecture audio.</p></li><li class="list__item" id="-pmsznu_230"><p id="-pmsznu_231"><code class="code" id="-pmsznu_232">getTagsButtonFunc</code> est une fonction qui renvoie une fonction de bouton qui, lorsqu'on clique dessus, lit les tags d'un fichier MP3 et les affiche dans une bo&icirc;te de dialogue.</p></li><li class="list__item" id="-pmsznu_233"><p id="-pmsznu_234"><code class="code" id="-pmsznu_235">getCurrentDirURI</code> est une fonction d'aide utilis&eacute;e pour obtenir une URI de fichier pour le r&eacute;pertoire courant.</p></li></ul><p id="-pmsznu_236">L'architecture globale montre une utilisation typique des goroutines et des canaux, o&ugrave; l'interface graphique reste r&eacute;active en effectuant des op&eacute;rations potentiellement bloquantes (comme la lecture d'une chanson) dans des goroutines s&eacute;par&eacute;es et en utilisant des canaux pour la communication entre elles.</p><section class="chapter"><h2 id="gettagsbuttonfunc" data-toc="gettagsbuttonfunc"><code class="code" id="-pmsznu_238">getTagsButtonFunc</code></h2><div class="code-block" data-lang="go">
+func getTagsButtonFunc(w fyne.Window) func() {
+	return func() {
+		f, err := os.Open(&quot;chap9/09_mp3/Lame_Drivers_-_01_-_Frozen_Egg.mp3&quot;)
+		if err != nil {
+			dialog.ShowError(err, w)
+		}
+		m, err := tag.ReadFrom(f)
+		if err != nil {
+			dialog.ShowError(err, w)
+		}
+		msg := fmt.Sprintf(&quot;Format : %s\nTitle : %s\nAlbum : %s\n Artist : %s\nYear : %d&quot;,
+			m.Format(), m.Title(), m.Album(), m.Artist(), m.Year())
+		dialog.ShowInformation(&quot;Tags&quot;, msg, w)
+	}
+}
+</div><p id="-pmsznu_240">La fonction <code class="code" id="-pmsznu_241">getTagsButtonFunc</code> retourne une fonction anonyme. Cette fonction lit le fichier <code class="code" id="-pmsznu_242">mp3</code> en utilisant la fonction <code class="code" id="-pmsznu_243">Open</code> du package <code class="code" id="-pmsznu_244">os</code> et g&egrave;re l'erreur potentielle qui pourrait se produire. Ensuite, elle extrait les m&eacute;tadonn&eacute;es/tags du fichier mp3 en utilisant la fonction <code class="code" id="-pmsznu_245">ReadFrom</code> du package <code class="code" id="-pmsznu_246">tag</code>, qui pourrait &eacute;galement provoquer une erreur.</p><p id="-pmsznu_247">Les m&eacute;tadonn&eacute;es extraites comprennent le format, le titre, l'album, l'artiste et l'ann&eacute;e de la chanson. Ces informations sont ensuite jointes avec des s&eacute;parateurs &quot;\n&quot; en utilisant <code class="code" id="-pmsznu_248">fmt.Sprintf</code>, et une bo&icirc;te de dialogue d'information est affich&eacute;e avec ces informations.</p><p id="-pmsznu_249">Voici une explication de base du code:</p><ol class="list _decimal" id="-pmsznu_250" type="1"><li class="list__item" id="-pmsznu_251"><p id="-pmsznu_252"><code class="code" id="-pmsznu_253">func getTagsButtonFunc(w fyne.Window) func()</code>: C'est la d&eacute;finition de la fonction <code class="code" id="-pmsznu_254">getTagsButtonFunc</code>. Cette fonction prend une instance de <code class="code" id="-pmsznu_255">fyne.Window</code> et renvoie une autre fonction.</p></li><li class="list__item" id="-pmsznu_256"><p id="-pmsznu_257">La fonction anonyme renvoy&eacute;e lit les donn&eacute;es mp3. Cela est fait en appelant <code class="code" id="-pmsznu_258">os.Open</code> sur l'emplacement du fichier mp3, ce qui renvoie un fichier et une erreur. S'il y a une erreur (le fichier n'a pas pu &ecirc;tre ouvert), une bo&icirc;te de dialogue d'erreur est affich&eacute;e en utilisant <code class="code" id="-pmsznu_259">dialog.ShowError</code>.</p></li><li class="list__item" id="-pmsznu_260"><p id="-pmsznu_261">Ensuite, <code class="code" id="-pmsznu_262">tag.ReadFrom(f)</code> est appel&eacute;e avec le fichier comme argument, ce qui lit les m&eacute;tadonn&eacute;es du fichier et renvoie une <code class="code" id="-pmsznu_263">tag.Metadata</code> et &eacute;ventuellement une erreur. S'il y a une erreur (les m&eacute;tadonn&eacute;es n'ont pas pu &ecirc;tre lues), une autre bo&icirc;te de dialogue d'erreur est affich&eacute;e.</p></li><li class="list__item" id="-pmsznu_264"><p id="-pmsznu_265">Ensuite, les m&eacute;tadonn&eacute;es sont format&eacute;es en une cha&icirc;ne en utilisant <code class="code" id="-pmsznu_266">fmt.Sprintf</code>. Le message de la cha&icirc;ne contiendra diverses informations des m&eacute;tadonn&eacute;es, y compris le format, le titre, l'album, l'artiste et l'ann&eacute;e.</p></li><li class="list__item" id="-pmsznu_267"><p id="-pmsznu_268">Enfin, une bo&icirc;te de dialogue d'information est affich&eacute;e en utilisant <code class="code" id="-pmsznu_269">dialog.ShowInformation</code> avec le titre &quot;Tags&quot; et la cha&icirc;ne format&eacute;e pr&eacute;c&eacute;demment.</p></li></ol><p id="-pmsznu_270">Cette fonction anonyme est utilis&eacute;e comme argument pour cr&eacute;er un bouton. Lorsque ce bouton est press&eacute;, la fonction sera ex&eacute;cut&eacute;e, affichant une bo&icirc;te de dialogue avec les tags du fichier mp3.</p></section><section class="chapter"><h2 id="getopenbuttonfunc" data-toc="getopenbuttonfunc"><code class="code" id="-pmsznu_272">getOpenButtonFunc</code></h2><div class="code-block" data-lang="go">
+func getOpenButtonFunc(w fyne.Window, playerActionChannel chan PlayerAction) func() {
+	return func() {
+		fd := dialog.NewFileOpen(getOpenFileDialogFunc(w, playerActionChannel), w)
+		fd.SetFilter(storage.NewExtensionFileFilter([]string{&quot;.mp3&quot;}))
+		listableUri, err := getCurrentDirURI()
+		if err != nil {
+			dialog.ShowError(err, w)
+			return
+		}
+		fd.SetLocation(listableUri)
+		fd.Show()
+	}
+}
+</div><p id="-pmsznu_274">Cette fonction cr&eacute;e et renvoie une fermeture (closure function) qui s'ex&eacute;cutera lorsque le bouton &quot;Ouvrir&quot; sera cliqu&eacute; sur l'interface utilisateur du lecteur MP3. Les d&eacute;tails de la fonction sont :</p><ol class="list _decimal" id="-pmsznu_275" type="1"><li class="list__item" id="-pmsznu_276"><p id="-pmsznu_277">Elle cr&eacute;e un nouveau dialogue d'ouverture de fichier (<code class="code" id="-pmsznu_278">dialog.NewFileOpen</code>) qui s'ouvre lorsque le bouton &quot;Ouvrir&quot; sur l'interface utilisateur du lecteur MP3 est cliqu&eacute;. La fonction retourn&eacute;e par <code class="code" id="-pmsznu_279">getOpenFileDialogFunc(w, playerActionChannel)</code> pass&eacute;e en argument &agrave; <code class="code" id="-pmsznu_280">dialog.NewFileOpen</code> est un callback qui sera ex&eacute;cut&eacute; lorsqu'un fichier est s&eacute;lectionn&eacute; dans le dialogue.</p><p id="-pmsznu_281"><code class="code" id="-pmsznu_282">getOpenFileDialogFunc</code> est responsable de l'arr&ecirc;t de la lecture de la chanson actuelle (le cas &eacute;ch&eacute;ant), du d&eacute;marrage de la lecture de la chanson s&eacute;lectionn&eacute;e, et de la gestion des erreurs qui peuvent survenir lors de ces op&eacute;rations.</p></li><li class="list__item" id="-pmsznu_283"><p id="-pmsznu_284">Elle d&eacute;finit un filtre (<code class="code" id="-pmsznu_285">SetFilter</code>) pour le dialogue de fichier afin de ne montrer que les fichiers <code class="code" id="-pmsznu_286">.mp3</code>.</p></li><li class="list__item" id="-pmsznu_287"><p id="-pmsznu_288">Elle r&eacute;cup&egrave;re le r&eacute;pertoire de travail actuel sous forme de URI listable (<code class="code" id="-pmsznu_289">getCurrentDirURI()</code>) et le d&eacute;finit comme emplacement de d&eacute;part (<code class="code" id="-pmsznu_290">SetLocation</code>) pour le dialogue de fichier.</p></li><li class="list__item" id="-pmsznu_291"><p id="-pmsznu_292">S'il y a une erreur en obtenant le r&eacute;pertoire courant, elle affiche un dialogue avec cette erreur.</p></li><li class="list__item" id="-pmsznu_293"><p id="-pmsznu_294">Le dialogue de fichier est alors montr&eacute; (<code class="code" id="-pmsznu_295">fd.Show()</code>).</p></li></ol></section><section class="chapter"><h2 id="createactionbutton" data-toc="createactionbutton"><code class="code" id="-pmsznu_297">createActionButton</code></h2><div class="code-block" data-lang="go">
+func createActionButton(playerActionChannel chan PlayerAction, label string, playerAction PlayerAction) *widget.Button {
+	return widget.NewButton(label, func() {
+		select {
+		case playerActionChannel &lt;- playerAction:
+			log.Println(label + &quot;Action&quot;)
+		default:
+			log.Println(label + &quot;Action : Inactif&quot;)
+		}
+	})
+}
+</div><p id="-pmsznu_299">Cette fonction prend trois arguments :</p><ul class="list _bullet" id="-pmsznu_300"><li class="list__item" id="-pmsznu_301"><p>un <code class="code" id="-pmsznu_302">chan PlayerAction</code> nomm&eacute; <code class="code" id="-pmsznu_303">playerActionChannel</code> - c'est une sorte de canal de communication par lequel les <code class="code" id="-pmsznu_304">PlayerAction</code> sont transmises.</p></li><li class="list__item" id="-pmsznu_305"><p>une <code class="code" id="-pmsznu_306">string</code> nomm&eacute;e <code class="code" id="-pmsznu_307">label</code> - Cela indique l'action que le bouton de l'interface utilisateur effectuera.</p></li><li class="list__item" id="-pmsznu_308"><p>un <code class="code" id="-pmsznu_309">PlayerAction</code> nomm&eacute; <code class="code" id="-pmsznu_310">playerAction</code> - c'est l'action qui correspond au bouton press&eacute;, par exemple, play, pause, etc.</p></li></ul><p id="-pmsznu_311"><code class="code" id="-pmsznu_312">createActionButton</code> retourne un bouton (<code class="code" id="-pmsznu_313">*widget.Button</code>) qui est cr&eacute;&eacute; en utilisant <code class="code" id="-pmsznu_314">widget.NewButton</code>. Ce bouton re&ccedil;oit le <code class="code" id="-pmsznu_315">label</code> comme texte et une fonction anonyme &agrave; ex&eacute;cuter lorsque le bouton est cliqu&eacute;.</p><p id="-pmsznu_316">La fonction anonyme utilise une d&eacute;claration <code class="code" id="-pmsznu_317">select</code> pour essayer d'envoyer <code class="code" id="-pmsznu_318">playerAction</code> dans <code class="code" id="-pmsznu_319">playerActionChannel</code>:</p><ul class="list _bullet" id="-pmsznu_320"><li class="list__item" id="-pmsznu_321"><p>Si elle peut envoyer le <code class="code" id="-pmsznu_322">PlayerAction</code>, elle enregistre ensuite que l'action avec le <code class="code" id="-pmsznu_323">label</code> fourni a &eacute;t&eacute; effectu&eacute;e ( avec &quot;Action&quot; ajout&eacute;).</p></li><li class="list__item" id="-pmsznu_324"><p>Si elle ne peut pas envoyer le <code class="code" id="-pmsznu_325">PlayerAction</code> (c'est-&agrave;-dire si le canal n'est pas pr&ecirc;t &agrave; recevoir), alors elle enregistre que l'action est inactive (avec &quot;Action : Inactif&quot; ajout&eacute;).</p></li></ul><p id="-pmsznu_326">Le type <code class="code" id="-pmsznu_327">PlayerAction</code> est d&eacute;fini comme suit :</p><div class="code-block" data-lang="go">
+type PlayerAction int
+</div><p id="-pmsznu_329">Il s'agit d'un alias de type pour le type <code class="code" id="-pmsznu_330">int</code>. Le but de cet alias de type est de rendre le code plus lisible et facile &agrave; comprendre en associant la valeur <code class="code" id="-pmsznu_331">int</code> &agrave; une certaine action du lecteur. Les actions du lecteur sont d&eacute;finies dans un bloc de constantes comme <code class="code" id="-pmsznu_332">iota</code>, initialisant <code class="code" id="-pmsznu_333">PlayAction</code> avec 0 et incr&eacute;mentant la valeur pour les constantes suivantes :</p><div class="code-block" data-lang="go">
+const (
+	PlayAction PlayerAction = iota
+	PauseAction
+	ToggleAction
+	StopAction
+	KillAction
+)
+</div></section><section class="chapter"><h2 id="getopenfiledialogfunc" data-toc="getopenfiledialogfunc"><code class="code" id="-pmsznu_336">getOpenFileDialogFunc</code></h2><p id="-pmsznu_337">La fonction <code class="code" id="-pmsznu_338">getOpenFileDialogFunc</code> est une fonction d'ordre sup&eacute;rieur qui cr&eacute;e et renvoie une autre fonction. La fonction qu'elle renvoie est cens&eacute;e traiter un fichier s&eacute;lectionn&eacute; par l'utilisateur dans une bo&icirc;te de dialogue :</p><div class="code-block" data-lang="go">
+func getOpenFileDialogFunc(w fyne.Window, c chan PlayerAction) func(reader fyne.URIReadCloser, err error) {
+	return func(reader fyne.URIReadCloser, err error) { ... }
+}
+</div><p id="-pmsznu_340">Cette fonction est con&ccedil;ue pour s'int&eacute;grer avec la bo&icirc;te de dialogue de fichier du framework Fyne (<code class="code" id="-pmsznu_341">dialog.NewFileOpen</code>).</p><p id="-pmsznu_342">S'il y a une erreur ou si aucun fichier n'est s&eacute;lectionn&eacute; (si <code class="code" id="-pmsznu_343">reader</code> est <code class="code" id="-pmsznu_344">nil</code>), la fonction retourne :</p><div class="code-block" data-lang="go">
+if err != nil {
+	dialog.ShowError(err, w)
+	return
+}
+if reader == nil {
+	log.Println(&quot;Annulé&quot;)
+	return
+}
+</div><p id="-pmsznu_346">Apr&egrave;s qu'un fichier a &eacute;t&eacute; s&eacute;lectionn&eacute;, elle essaie d'envoyer le message <code class="code" id="-pmsznu_347">KillAction</code> dans le canal <code class="code" id="-pmsznu_348">c</code> pour arr&ecirc;ter la chanson actuellement en lecture :</p><div class="code-block" data-lang="go">
+select {
+	case c &lt;- KillAction:
+		log.Println(&quot;&lt;- KillAction&quot;)
+	default:
+		log.Println(&quot;Rien à arrêter&quot;)
+}
+</div><p id="-pmsznu_350">Cette partie est dans un bloc <code class="code" id="-pmsznu_351">select</code>, ce qui signifie qu'elle est non bloquante, si le canal <code class="code" id="-pmsznu_352">c</code> n'est pas pr&ecirc;t &agrave; recevoir une nouvelle valeur, elle ne bloquera pas et passera au cas <code class="code" id="-pmsznu_353">default</code>.</p><p id="-pmsznu_354">Enfin, elle commence &agrave; jouer la chanson s&eacute;lectionn&eacute;e dans une nouvelle goroutine :</p><div class="code-block" data-lang="go">
+go playSong(reader, c)
+</div></section><section class="chapter"><h2 id="playsong" data-toc="playsong"><code class="code" id="-pmsznu_357">playSong</code></h2><div class="code-block" data-lang="go">
+func playSong(reader fyne.URIReadCloser, channel chan PlayerAction) {
+
+	streamer, format, err := mp3.Decode(reader)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	speaker.Init(format.SampleRate, format.SampleRate.N(time.Second/10))
+
+	ctrl := &amp;beep.Ctrl{Streamer: beep.Loop(-1, streamer), Paused: true}
+
+	speaker.Play(ctrl)
+	for {
+		action := &lt;-channel
+
+		switch action {
+		case PlayAction:
+			speaker.Lock()
+			ctrl.Paused = false
+			speaker.Unlock()
+		case PauseAction:
+			speaker.Lock()
+			ctrl.Paused = true
+			speaker.Unlock()
+		case ToggleAction:
+			speaker.Lock()
+			ctrl.Paused = !ctrl.Paused
+			speaker.Unlock()
+		case StopAction:
+			speaker.Lock()
+			ctrl.Paused = true
+			// replace la lecture au début de la chanson
+			err := streamer.Seek(0)
+			if err != nil {
+				log.Println(err)
+			}
+			speaker.Unlock()
+		case KillAction:
+			// ferme complètement la lecture de la chanson
+			err := streamer.Close()
+			if err != nil {
+				log.Println(err)
+			}
+			return
+		}
+	}
+}
+</div><p id="-pmsznu_359">Voici une explication de la fonction <code class="code" id="-pmsznu_360">playSong</code>:</p><ul class="list _bullet" id="-pmsznu_361"><li class="list__item" id="-pmsznu_362"><p id="-pmsznu_363">Cette fonction re&ccedil;oit deux arguments : un <code class="code" id="-pmsznu_364">URIReadCloser</code> du package <code class="code" id="-pmsznu_365">fyne</code>, qui fournit les donn&eacute;es du fichier audio, et un canal de <code class="code" id="-pmsznu_366">PlayerAction</code>, qui est un type personnalis&eacute; repr&eacute;sentant diff&eacute;rentes actions qui peuvent &ecirc;tre envoy&eacute;es &agrave; cette fonction.</p></li><li class="list__item" id="-pmsznu_367"><p id="-pmsznu_368">Elle commence par d&eacute;coder l'info du Reader en utilisant <code class="code" id="-pmsznu_369">mp3.Decode()</code>. Le d&eacute;codage peut &eacute;chouer pour des raisons vari&eacute;es, et dans ce cas l'erreur serait enregistr&eacute;e dans le journal et l'application se terminerait brusquement avec <code class="code" id="-pmsznu_370">log.Fatal()</code>.</p></li><li class="list__item" id="-pmsznu_371"><p id="-pmsznu_372">Si le d&eacute;codage r&eacute;ussit, le haut-parleur est initialis&eacute; avec <code class="code" id="-pmsznu_373">speaker.Init()</code> en utilisant le taux d'&eacute;chantillonnage du format du fichier mp3.</p></li><li class="list__item" id="-pmsznu_374"><p id="-pmsznu_375">Apr&egrave;s initialisation, un <code class="code" id="-pmsznu_376">Streamer</code> audio en boucle est cr&eacute;&eacute; qui commence initialement en &eacute;tant <code class="code" id="-pmsznu_377">Paused</code>. Le Speaker joue ensuite ce Streamer.</p></li><li class="list__item" id="-pmsznu_378"><p id="-pmsznu_379">Une boucle <code class="code" id="-pmsznu_380">for</code> infinie est utilis&eacute;e pour &eacute;couter continuellement les actions du canal <code class="code" id="-pmsznu_381">PlayerAction</code>. En fonction de l'action re&ccedil;ue, elle effectue les op&eacute;rations suivantes :</p><ul class="list _bullet" id="-pmsznu_382"><li class="list__item" id="-pmsznu_383"><p><code class="code" id="-pmsznu_384">PlayAction</code>: La chanson actuelle n'est pas en pause et commencera ou continuera &agrave; jouer.</p></li><li class="list__item" id="-pmsznu_385"><p><code class="code" id="-pmsznu_386">PauseAction</code>: La chanson est mise en pause.</p></li><li class="list__item" id="-pmsznu_387"><p><code class="code" id="-pmsznu_388">ToggleAction</code>: L'&eacute;tat de la chanson est bascul&eacute; entre pause et jeu.</p></li><li class="list__item" id="-pmsznu_389"><p><code class="code" id="-pmsznu_390">StopAction</code>: La chanson est mise en pause et remise &agrave; son d&eacute;but.</p></li><li class="list__item" id="-pmsznu_391"><p><code class="code" id="-pmsznu_392">KillAction</code>: Le <code class="code" id="-pmsznu_393">Streamer</code> de la chanson est ferm&eacute; et la fonction retourne, mettant ainsi fin &agrave; la lecture de la chanson.</p></li></ul></li></ul></section><div class="last-modified">Last modified: 29 avril 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ch09s09-exemple-9-mp3.html" class="navigation-links__prev">Exemple 9: MP3</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b224/app.js"></script></body></html>

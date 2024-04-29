@@ -69,5 +69,7 @@
         <toc-element topic="ch09s06-Exemple-6-Fichiers.md"/>
         <toc-element topic="ch09s07-Exemple-7-Menu.md"/>
         <toc-element topic="ch09s08-Exemple-8-Listes.md"/>
+        <toc-element topic="ch09s09-Exemple-9-MP3.md"/>
+        <toc-element topic="ch09s10-Exemple-10-MP3-avec-pause.md"/>
     </toc-element>
 </instance-profile>
